@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan GIIRSU Cosquín - Defensa de Tesis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8F7F4; /* Light Beige */
+            color: #3C3C3B; /* Dark Gray for text */
+        }
+        .nav-link {
+            transition: all 0.3s ease-in-out;
+            border-bottom: 2px solid transparent;
+            font-weight: 500; /* Medium weight for clarity */
+            padding-bottom: 4px; /* Space for border */
+        }
+        .nav-link:hover, .nav-link.active {
+            color: #227F6D; /* Deep Green/Teal for accent */
+            border-bottom-color: #227F6D;
+        }
+        /* Custom scrollbar for a cleaner look (optional, browser dependent) */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #e0dcd4; /* Lighter beige */
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #a8a092; /* Muted gray-brown */
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #8b8374; /* Darker muted gray-brown */
+        }
+
+        /* Styles for the animated cards */
+        .animated-card {
+            min-width: 100%; /* Full width on small screens */
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out, box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out; /* Added transitions */
+            opacity: 0.5; /* Slightly faded when not active */
+            transform: translateY(20px);
+            scroll-snap-align: center; /* Snap to center */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid #E0DCD4; /* Subtle border */
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); /* Subtle shadow */
+        }
+        .animated-card.active {
+            opacity: 1;
+            transform: translateY(0);
+            border-color: #227F6D; /* Highlight active card with accent color */
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1); /* Stronger shadow for active */
+        }
+        .scroll-container {
+            overflow-x: scroll; /* Ensure it's scrollable */
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch; /* For iOS momentum scrolling */
+            padding-bottom: 1rem; /* Add some padding to avoid scrollbar overlapping content */
+        }
+
+        /* Specific for mobile view of animated cards */
+        @media (min-width: 768px) {
+            .animated-card {
+                min-width: calc(50% - 16px); /* 2 cards per row with gap */
+            }
+        }
+        @media (min-width: 1024px) {
+            .animated-card {
+                min-width: calc(33.333% - 21.333px); /* 3 cards per row with gap (32px gap / 3 cards) */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header id="header" class="bg-[#F8F7F4]/90 backdrop-blur-sm sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-xl md:text-2xl font-bold text-[#2C5E54]">
+                Defensa de Tesis: GIIRSU Cosquín
+            </div>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#objetivos" class="nav-link text-gray-700 hover:text-[#227F6D]">Objetivos</a>
+                <a href="#contexto-problema" class="nav-link text-gray-700 hover:text-[#227F6D]">Contexto y Problema</a>
+                <a href="#metodologia" class="nav-link text-gray-700 hover:text-[#227F6D]">Metodología</a>
+                <a href="#propuestas" class="nav-link text-gray-700 hover:text-[#227F6D]">Propuestas</a>
+                <a href="#dimensiones" class="nav-link text-gray-700 hover:text-[#227F6D]">Dimensiones</a>
+                <a href="#conclusion" class="nav-link text-gray-700 hover:text-[#227F6D]">Conclusión</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" class="py-24 md:py-40 bg-white shadow-inner">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-6xl font-extrabold text-[#2C5E54] leading-tight mb-4">
+                    Gestión Integral de Residuos Sólidos Urbanos
+                </h1>
+                <p class="mt-4 text-lg md:text-2xl text-gray-700 max-w-4xl mx-auto font-light">
+                    Un enfoque desde la <span class="font-semibold text-[#227F6D]">Economía Circular</span> para transformar el futuro de Cosquín.
+                </p>
+                <p class="mt-12 text-md md:text-lg text-gray-500 font-medium">Trabajo Final de Grado</p>
+                <p class="text-sm md:text-base text-gray-500">Anahí Castro y Luca La Porta</p>
+            </div>
+        </section>
+
+        <section id="objetivos" class="py-20 md:py-32">
+            <div class="container mx-auto px-6 max-w-5xl">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#2C5E54] mb-4">Objetivos del Proyecto</h2>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                        Nuestra investigación busca contribuir al diseño de un plan de gestión integral de RSU en Cosquín, con una visión de economía circular.
+                    </p>
+                </div>
+                <div class="bg-white p-8 md:p-12 rounded-xl shadow-lg border border-gray-100">
+                    <h3 class="font-bold text-xl text-[#2C5E54] mb-4">Objetivo General:</h3>
+                    <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-6">
+                        Contribuir en el diseño de un plan de gestión integral e inclusivo de RSU desde la perspectiva de la economía circular en la localidad de Cosquín, Córdoba, durante el período comprendido entre 2024/2025.
+                    </p>
+                    <h3 class="font-bold text-xl text-[#2C5E54] mb-4">Objetivos Específicos:</h3>
+                    <ul class="list-disc list-inside text-base md:text-lg text-gray-700 leading-relaxed space-y-2">
+                        <li>Relevar capacidades institucionales, actores y normativa.</li>
+                        <li>Incluir entidades de la ESS en la gestión de RSU.</li>
+                        <li>Proponer un modelo de ordenanza para regular la gestión integral de RSU.</li>
+                        <li>Generar un conjunto de programas para organizar y planificar la GIIRSU.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="contexto-problema" class="py-20 md:py-32 bg-[#EAE8E1] shadow-inner">
+            <div class="container mx-auto px-6 max-w-5xl">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#2C5E54] mb-4">Contexto y Diagnóstico del Problema</h2>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                        Un vistazo a Cosquín y la problemática actual de sus residuos, con el timelapse que ilustra el crecimiento del micro-basural.
+                    </p>
+                </div>
+                <div class="bg-white p-8 md:p-12 rounded-xl shadow-lg border border-gray-100">
+                    <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-6">
+                        Cosquín, ciudad turística del Valle de Punilla, enfrenta una gestión de residuos obsoleta y sin planificación, agravada por el crecimiento demográfico (27% entre 2010-2022). Se observan microbasurales y la ausencia de un sitio de disposición final adecuado, generando contaminación y riesgos sanitarios. La economía local, dependiente del turismo, necesita estrategias resilientes y la promoción de empleos verdes.
+                    </p>
+                    <!-- Video timelapse del micro-basural -->
+                    <div class="flex justify-center my-10">
+                        <!-- IMPORTANTE: Si este video no se reproduce o da error 404, es probable que el enlace de Google Drive
+                             no sea directamente incrustable (hotlinking) o que los permisos del archivo no sean públicos.
+                             Asegúrate de que el archivo sea 'Público en la web' o considera subirlo a una plataforma
+                             como YouTube para una incrustación más fiable.
+                             URL proporcionada: https://drive.google.com/file/d/1kpwmv7cOr6vxkg4-Wyxeg2HhbuXZobT4/preview -->
+                        <video class="w-full max-w-3xl rounded-lg shadow-md aspect-video" autoplay loop muted playsinline>
+                            <source src="https://drive.google.com/file/d/1kpwmv7cOr6vxkg4-Wyxeg2HhbuXZobT4/preview" type="video/mp4">
+                            Su navegador no soporta el elemento de video.
+                        </video>
+                    </div>
+                    <p class="text-center text-sm text-gray-500 mt-4">Timelapse: Crecimiento del micro-basural de Cosquín a lo largo de los años. 🗑️</p>
+                    <div class="flex justify-center my-10">
+                        <!-- IMPORTANTE: Reemplaza esta URL de placehold.co con la URL de tu imagen real de "Ubicación del Departamento Punilla". -->
+                        <img src="https://placehold.co/600x350/e0dcd4/3C3C3B?text=Ubicación+Cosquín" alt="Ubicación del Departamento Punilla" class="w-full max-w-xl rounded-lg shadow-md">
+                    </div>
+                    <p class="text-center text-sm text-gray-500 mt-4">Ubicación del Departamento Punilla dentro de la Provincia de Córdoba. [Image of Ubicación del Departamento Punilla dentro de la Provincia de Córdoba.]</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="metodologia" class="py-20 md:py-32">
+            <div class="container mx-auto px-6 max-w-5xl">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#2C5E54] mb-4">Metodología de Investigación</h2>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                        Nuestro trabajo se estructuró como un proyecto de intervención, combinando diversas técnicas para un diagnóstico integral.
+                    </p>
+                </div>
+                <div class="bg-white p-8 md:p-12 rounded-xl shadow-lg border border-gray-100">
+                    <ul class="list-disc list-inside text-base md:text-lg text-gray-700 leading-relaxed space-y-4">
+                        <li><strong class="text-[#227F6D]">Entrevistas en Profundidad:</strong> Realizadas a funcionarios de la Secretaría de Ambiente de Cosquín para entender la gestión actual y futura.</li>
+                        <li><strong class="text-[#227F6D]">Exploraciones Territoriales y Observación Directa:</strong> Visitas a barrios y zonas afectadas por residuos, complementadas con análisis de imágenes satelitales (Google Earth) para observar la evolución temporal.</li>
+                        <li><strong class="text-[#227F6D]">Revisión Documental y Análisis de Datos:</strong> Consulta de investigaciones previas y procesamiento de datos de fuentes como REDATAM (INDEC) para volúmenes de residuos.</li>
+                        <li><strong class="text-[#227F6D]">Contacto Directo con Actores Locales:</strong> Para comprender la realidad territorial y la prioridad de los RSU en la agenda gubernamental.</li>
+                    </ul>
+                    <p class="text-base md:text-lg text-gray-700 leading-relaxed mt-6">
+                        El diagnóstico resultante fue la base para el diseño de programas específicos y la propuesta de modelos de ordenanzas para el Plan de Gestión Integral de Residuos Sólidos Urbanos (GIIRSU).
+                    </p>
+                    <div class="flex justify-center my-10">
+                        <!-- IMPORTANTE: Reemplaza esta URL de placehold.co con la URL de tu imagen real de la infografía de metodología. -->
+                        <img src="https://placehold.co/600x350/e0dcd4/3C3C3B?text=Metodología+Infografía" alt="Infografía de Metodología" class="w-full max-w-2xl rounded-lg shadow-md">
+                    </div>
+                     <p class="text-center text-sm text-gray-500 mt-4">Esquema del Marco Metodológico. [Image of Infografía de diagnóstico - conceptual, not the actual one].</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Propuestas Estratégicas -->
+        <section id="propuestas" class="py-20 md:py-32 bg-white shadow-inner">
+            <div class="container mx-auto px-6 max-w-6xl">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#2C5E54] mb-4">Propuestas Estratégicas: 5 Programas Clave</h2>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                        Nuestra propuesta se materializa a través de 5 programas que abordan las deficiencias del sistema actual y promueven la sostenibilidad.
+                    </p>
+                </div>
+
+                <div class="relative">
+                    <div id="propuestas-container" class="flex overflow-x-scroll scroll-container snap-x snap-mandatory gap-8 p-4 md:p-8 rounded-xl shadow-lg bg-white border border-gray-100">
+                        <!-- Propuesta Cards will be injected here by JavaScript -->
+                    </div>
+                    <button id="prevPropuestaBtn" class="absolute left-0 top-1/2 -translate-y-1/2 bg-[#227F6D] text-white p-3 rounded-full shadow-lg hover:bg-[#1a6355] transition-all hidden md:block">
+                        &#10094;
+                    </button>
+                    <button id="nextPropuestaBtn" class="absolute right-0 top-1/2 -translate-y-1/2 bg-[#227F6D] text-white p-3 rounded-full shadow-lg hover:bg-[#1a6355] transition-all hidden md:block">
+                        &#10095;
+                    </button>
+                    <div id="propuesta-pagination" class="flex justify-center mt-8 space-x-2">
+                        <!-- Pagination dots will be injected here by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Proyección a Futuro (Dimensiones Clave) -->
+        <section id="dimensiones" class="py-20 md:py-32 bg-[#EAE8E1] shadow-inner">
+            <div class="container mx-auto px-6 max-w-6xl">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#2C5E54] mb-4">Proyección a Futuro: 5 Dimensiones Clave</h2>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                        La implementación de nuestro plan tiene el potencial de transformar a Cosquín en un modelo de gestión integral, abarcando diversas áreas de impacto.
+                    </p>
+                </div>
+
+                <div class="relative">
+                    <div id="dimensiones-container" class="flex overflow-x-scroll scroll-container snap-x snap-mandatory gap-8 p-4 md:p-8 rounded-xl shadow-lg bg-white border border-gray-100">
+                        <!-- Dimensión Cards will be injected here by JavaScript -->
+                    </div>
+                    <button id="prevDimensionBtn" class="absolute left-0 top-1/2 -translate-y-1/2 bg-[#227F6D] text-white p-3 rounded-full shadow-lg hover:bg-[#1a6355] transition-all hidden md:block">
+                        &#10094;
+                    </button>
+                    <button id="nextDimensionBtn" class="absolute right-0 top-1/2 -translate-y-1/2 bg-[#227F6D] text-white p-3 rounded-full shadow-lg hover:bg-[#1a6355] transition-all hidden md:block">
+                        &#10095;
+                    </button>
+                    <div id="dimension-pagination" class="flex justify-center mt-8 space-x-2">
+                        <!-- Pagination dots will be injected here by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="conclusion" class="py-20 md:py-32">
+             <div class="container mx-auto px-6 max-w-5xl">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#2C5E54] mb-4">Desafíos y Conclusión</h2>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                        La implementación de este ambicioso plan presenta retos, pero su superación es el camino hacia un futuro próspero para Cosquín.
+                    </p>
+                </div>
+                <div class="bg-white p-8 md:p-12 rounded-xl shadow-lg border border-gray-100">
+                    <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-6">
+                        Enfrentamos desafíos como la obtención de recursos y la resistencia al cambio. La coordinación regional y la sostenibilidad cooperativa son cruciales.
+                    </p>
+                    <p class="text-base md:text-lg text-gray-700 leading-relaxed font-semibold">
+                        Este proyecto transforma Cosquín. Invitamos a todos a sumarse a esta visión colectiva por una gestión ambiental inclusiva y un futuro próspero. 🚀
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-[#2C5E54] text-white">
+        <div class="container mx-auto px-6 py-10 text-center">
+            <p class="text-md font-medium">Proyecto de Intervención Territorial - Trabajo Final de Grado 2025</p>
+            <p class="text-sm opacity-90 mt-2">Anahí Castro & Luca La Porta</p>
+            <p class="text-sm opacity-90">Universidad Nacional de Villa María - Sede Córdoba</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('main section');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            const sectionObserver = new IntersectionObserver((entries) => {
+                 entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href').substring(1) === entry.target.id) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }, {
+                rootMargin: '-30% 0px -70% 0px'
+            });
+
+            sections.forEach(section => {
+                sectionObserver.observe(section);
+            });
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetSection = document.getElementById(targetId);
+                    if (targetSection) {
+                        targetSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+
+            const propuestasContent = [
+                { icon: '♻️', title: '1. Nodo Local de Reciclado', desc: 'Centro de acopio, clasificación y valorización; corazón de la gestión integral.' },
+                { icon: '🌱', title: '2. Separación en Origen', desc: 'Fomenta el cambio cultural y la recolección diferenciada en la comunidad.' },
+                { icon: '🎉', title: '3. Cosquín, Festival Sostenible', desc: 'Reduce el impacto ambiental en grandes eventos y la temporada turística.' },
+                { icon: '🏢', title: '4. Registro Grandes Generadores', desc: 'Regula y optimiza la gestión de residuos de comercios y empresas.' },
+                { icon: '🤝', title: '5. Registro Recuperadores', desc: 'Formaliza y organiza a los trabajadores de la economía circular.' }
+            ];
+
+            const dimensionesContent = [
+                { icon: '🌍', title: 'Sostenibilidad Ambiental', desc: 'Menos contaminación, más recursos y mitigación del impacto del basural. 🌳' },
+                { icon: '👥', title: 'Inclusión Social y Empleo Verde', desc: 'Dignificación laboral, nuevos puestos de trabajo y fortalecimiento social. 👨‍🏭' },
+                { icon: '💰', title: 'Desarrollo Económico', desc: 'Nuevas cadenas de valor, turismo sostenible y ahorro municipal. 📈' },
+                { icon: '💡', title: 'Transformación Cultural', desc: 'Educación ambiental, fomento de hábitos responsables y ciudadanía activa. 📚' },
+                { icon: '🏛️', title: 'Transformación Institucional', desc: 'Gobernanza participativa, marco legal sólido y capacidad de gestión. 📋' }
+            ];
+
+            function setupAnimatedSection(containerId, prevBtnId, nextBtnId, paginationId, contentArray) {
+                const container = document.getElementById(containerId);
+                const prevBtn = document.getElementById(prevBtnId);
+                const nextBtn = document.getElementById(nextBtnId);
+                const paginationContainer = document.getElementById(paginationId);
+                let currentIndex = 0;
+
+                function renderCards() {
+                    container.innerHTML = '';
+                    paginationContainer.innerHTML = '';
+                    contentArray.forEach((item, index) => {
+                        const card = document.createElement('div');
+                        card.className = `animated-card bg-white p-8 rounded-xl shadow-md border border-gray-100 flex flex-col items-center text-center justify-center space-y-4 flex-shrink-0`;
+                        card.innerHTML = `
+                            <div class="text-5xl mb-2">${item.icon}</div>
+                            <h3 class="font-bold text-xl text-[#2C5E54]">${item.title}</h3>
+                            <p class="text-base text-gray-700 leading-relaxed">${item.desc}</p>
+                        `;
+                        container.appendChild(card);
+
+                        const dot = document.createElement('div');
+                        dot.className = `w-3 h-3 rounded-full bg-gray-300 cursor-pointer transition-colors`;
+                        dot.addEventListener('click', () => {
+                            currentIndex = index;
+                            scrollToCard(currentIndex);
+                            updatePagination();
+                        });
+                        paginationContainer.appendChild(dot);
+                    });
+                    updateActiveCard();
+                }
+
+                function scrollToCard(index) {
+                    if (container.children[index]) {
+                        // Calculate the scroll position to center the card horizontally
+                        const cardElement = container.children[index];
+                        const containerWidth = container.offsetWidth;
+                        const cardOffsetLeft = cardElement.offsetLeft;
+                        const cardWidth = cardElement.offsetWidth;
+                        
+                        // Calculate target scrollLeft to center the card
+                        const targetScrollLeft = cardOffsetLeft - (containerWidth / 2) + (cardWidth / 2);
+                        
+                        container.scrollTo({
+                            left: targetScrollLeft,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+
+                function updateActiveCard() {
+                    Array.from(container.children).forEach((card, index) => {
+                        if (index === currentIndex) {
+                            card.classList.add('active');
+                        } else {
+                            card.classList.remove('active');
+                        }
+                    });
+                    updatePagination();
+                }
+
+                function updatePagination() {
+                    Array.from(paginationContainer.children).forEach((dot, index) => {
+                        if (index === currentIndex) {
+                            dot.classList.add('bg-[#227F6D]');
+                            dot.classList.remove('bg-gray-300');
+                        } else {
+                            dot.classList.remove('bg-[#227F6D]');
+                            dot.classList.add('bg-gray-300');
+                        }
+                    });
+                }
+
+                prevBtn.addEventListener('click', () => {
+                    currentIndex = (currentIndex > 0) ? currentIndex - 1 : contentArray.length - 1;
+                    scrollToCard(currentIndex);
+                    updateActiveCard();
+                });
+
+                nextBtn.addEventListener('click', () => {
+                    currentIndex = (currentIndex < contentArray.length - 1) ? currentIndex + 1 : 0;
+                    scrollToCard(currentIndex);
+                    updateActiveCard();
+                });
+
+                container.addEventListener('scroll', () => {
+                    let closestIndex = currentIndex;
+                    let minDistance = Infinity;
+                    Array.from(container.children).forEach((card, index) => {
+                        const cardCenter = card.offsetLeft + card.offsetWidth / 2;
+                        const containerCenter = container.scrollLeft + container.offsetWidth / 2;
+                        const distance = Math.abs(cardCenter - containerCenter);
+                        if (distance < minDistance) {
+                            minDistance = distance;
+                            closestIndex = index;
+                        }
+                    });
+
+                    if (closestIndex !== currentIndex) {
+                        currentIndex = closestIndex;
+                        updateActiveCard();
+                    }
+                });
+
+                renderCards();
+                updateActiveCard(); // Set initial active card
+            }
+
+            setupAnimatedSection('propuestas-container', 'prevPropuestaBtn', 'nextPropuestaBtn', 'propuesta-pagination', propuestasContent);
+            setupAnimatedSection('dimensiones-container', 'prevDimensionBtn', 'nextDimensionBtn', 'dimension-pagination', dimensionesContent);
+        });
+    </script>
+</body>
+</html>
