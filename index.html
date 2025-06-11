@@ -89,6 +89,19 @@
                 min-width: calc(33.333% - 21.333px); /* 3 cards per row with gap (32px gap / 3 cards) */
             }
         }
+
+        /* Image Modal Styles */
+        #imageModal {
+            transition: opacity 0.3s ease-in-out;
+            background-color: rgba(0, 0, 0, 0.8); /* Darker overlay */
+        }
+        #imageModal.hidden {
+            opacity: 0;
+            pointer-events: none; /* Disable interaction when hidden */
+        }
+        #imageModal img {
+            cursor: zoom-out; /* Indicate it's clickable to close */
+        }
     </style>
 </head>
 
@@ -160,25 +173,25 @@
                         Cosquín, ciudad turística del Valle de Punilla, enfrenta una gestión de residuos obsoleta y sin planificación, agravada por el crecimiento demográfico (27% entre 2010-2022). Se observan microbasurales y la ausencia de un sitio de disposición final adecuado, generando contaminación y riesgos sanitarios. La economía local, dependiente del turismo, necesita estrategias resilientes y la promoción de empleos verdes.
                     </p>
                     
-                    <div class="flex flex-col md:flex-row justify-center items-center my-10 gap-8">
-                        <div class="flex-1 min-w-0">
+                    <div class="flex flex-col md:flex-row justify-center items-stretch my-10 gap-8">
+                        <div class="flex-1 flex flex-col items-center justify-center p-2 border border-gray-200 rounded-lg bg-gray-50 hover:shadow-md transition-shadow cursor-pointer">
                             <!-- IMAGEN 1: Mapa del Valle de Punilla -->
                             <!-- Asegúrate de que 'mapa-vallehermoso.jpg' esté en 'assets/images/' en tu proyecto local. -->
-                            <img src="assets/images/mapa-vallehermoso.jpg" alt="Mapa de la ubicación del Departamento Punilla y alrededores" class="w-full h-auto max-w-full rounded-lg shadow-md aspect-video object-cover" onerror="this.onerror=null; this.src='https://placehold.co/600x350/e0dcd4/3C3C3B?text=Mapa+no+cargado'; console.error('Error al cargar mapa-vallehermoso.jpg');">
-                            <p class="text-center text-sm text-gray-500 mt-4">Ubicación del Departamento Punilla y alrededores. </p>
+                            <img src="assets/images/mapa-vallehermoso.jpg" alt="Mapa de la ubicación del Departamento Punilla y alrededores" class="w-full h-auto max-w-full rounded-lg object-contain cursor-pointer" onclick="openModal('assets/images/mapa-vallehermoso.jpg')" onerror="this.onerror=null; this.src='https://placehold.co/600x350/e0dcd4/3C3C3B?text=Mapa+no+cargado'; console.error('Error al cargar mapa-vallehermoso.jpg');">
+                            <p class="text-center text-sm text-gray-500 mt-4">Ubicación del Departamento Punilla y alrededores. [Image of Ubicación del Departamento Punilla dentro de la Provincia de Córdoba]</p>
                         </div>
-                        <div class="flex-1 min-w-0">
+                        <div class="flex-1 flex flex-col items-center justify-center p-2 border border-gray-200 rounded-lg bg-gray-50 hover:shadow-md transition-shadow cursor-pointer">
                             <!-- IMAGEN 2: Barrio San José Obrero -->
-                            <!-- Asegúrate de que 'Barrio San Jose Obrero.jpg' esté en 'assets/images/' en tu proyecto local. -->
-                            <img src="assets/images/Barrio_Obrero.jpg" alt="Vista satelital del Barrio San José Obrero" class="w-full h-auto max-w-full rounded-lg shadow-md aspect-video object-cover" onerror="this.onerror=null; this.src='https://placehold.co/600x350/e0dcd4/3C3C3B?text=Barrio+no+cargado'; console.error('Error al cargar Barrio San Jose Obrero.jpg');">
-                            <p class="text-center text-sm text-gray-500 mt-4">Vista satelital del Barrio San José Obrero: evolución temporal. </p>
+                            <!-- ASEGÚRATE de que el nombre del archivo local sea EXACTAMENTE 'Barrio San Jose Obrero.png' o ajusta la ruta. -->
+                            <img src="assets/images/Barrio San Jose Obrero.png" alt="Vista satelital del Barrio San José Obrero" class="w-full h-auto max-w-full rounded-lg object-contain cursor-pointer" onclick="openModal('assets/images/Barrio San Jose Obrero.png')" onerror="this.onerror=null; this.src='https://placehold.co/600x350/e0dcd4/3C3C3B?text=Barrio+no+cargado'; console.error('Error al cargar Barrio San Jose Obrero.png');">
+                            <p class="text-center text-sm text-gray-500 mt-4">Vista satelital del Barrio San José Obrero: evolución temporal. [Image of Vista satelital del Barrio San José Obrero]</p>
                         </div>
                     </div>
 
                     <!-- Video timelapse del micro-basural -->
                     <div class="flex justify-center my-10">
-                        <!-- Asegúrate de que 'Timelapse Basural.mp4' esté en 'assets/videos/' en tu proyecto local. -->
-                        <video class="w-full max-w-3xl rounded-lg shadow-md aspect-video" autoplay loop muted playsinline onerror="console.error('Error al cargar Timelapse Basural.mp4');">
+                        <!-- ASEGÚRATE de que el nombre del archivo local sea EXACTAMENTE 'Timelapse.mp4' o 'Timelapse Basural.mp4' y ajusta la ruta. -->
+                        <video class="w-full max-w-3xl rounded-lg shadow-md aspect-video" autoplay loop muted playsinline controls onerror="console.error('Error al cargar Timelapse.mp4 o Timelapse Basural.mp4. Verifica el nombre exacto y la ruta local. ');">
                             <source src="assets/videos/Timelapse.mp4" type="video/mp4">
                             Su navegador no soporta el elemento de video.
                         </video>
@@ -207,17 +220,17 @@
                         El diagnóstico resultante fue la base para el diseño de programas específicos y la propuesta de modelos de ordenanzas para el Plan de Gestión Integral de Residuos Sólidos Urbanos (GIIRSU).
                     </p>
                     
-                    <div class="flex flex-col md:flex-row justify-center items-center my-10 gap-8">
-                        <div class="flex-1 min-w-0">
+                    <div class="flex flex-col md:flex-row justify-center items-stretch my-10 gap-8">
+                        <div class="flex-1 flex flex-col items-center justify-center p-2 border border-gray-200 rounded-lg bg-gray-50 hover:shadow-md transition-shadow cursor-pointer">
                             <!-- IMAGEN 3: Plano Nodo Cosquín - Página 2 -->
                             <!-- Asegúrate de que 'Plano Nodo Cosquin-Página-2.png' esté en 'assets/images/' en tu proyecto local. -->
-                            <img src="assets/images/Plano Nodo Cosquin-Página-2.png" alt="Plano del Nodo de Reciclado Cosquín" class="w-full h-auto max-w-full rounded-lg shadow-md aspect-video object-cover" onerror="this.onerror=null; this.src='https://placehold.co/600x350/e0dcd4/3C3C3B?text=Plano+no+cargado'; console.error('Error al cargar Plano Nodo Cosquin-Página-2.png');">
+                            <img src="assets/images/Plano Nodo Cosquin-Página-2.png" alt="Plano del Nodo de Reciclado Cosquín" class="w-full h-auto max-w-full rounded-lg object-contain cursor-pointer" onclick="openModal('assets/images/Plano Nodo Cosquin-Página-2.png')" onerror="this.onerror=null; this.src='https://placehold.co/600x350/e0dcd4/3C3C3B?text=Plano+no+cargado'; console.error('Error al cargar Plano Nodo Cosquin-Página-2.png');">
                             <p class="text-center text-sm text-gray-500 mt-4">Plano detallado del Nodo de Reciclado de Cosquín. </p>
                         </div>
-                        <div class="flex-1 min-w-0">
+                        <div class="flex-1 flex flex-col items-center justify-center p-2 border border-gray-200 rounded-lg bg-gray-50 hover:shadow-md transition-shadow cursor-pointer">
                             <!-- IMAGEN 4: Financiación -->
                             <!-- Asegúrate de que 'financiacion.png' esté en 'assets/images/' en tu proyecto local. -->
-                            <img src="assets/images/financiacion.png" alt="Esquema de financiación del proyecto" class="w-full h-auto max-w-full rounded-lg shadow-md aspect-video object-cover" onerror="this.onerror=null; this.src='https://placehold.co/600x350/e0dcd4/3C3C3B?text=Financiación+no+cargada'; console.error('Error al cargar financiacion.png');">
+                            <img src="assets/images/financiacion.png" alt="Esquema de financiación del proyecto" class="w-full h-auto max-w-full rounded-lg object-contain cursor-pointer" onclick="openModal('assets/images/financiacion.png')" onerror="this.onerror=null; this.src='https://placehold.co/600x350/e0dcd4/3C3C3B?text=Financiación+no+cargada'; console.error('Error al cargar financiacion.png');">
                             <p class="text-center text-sm text-gray-500 mt-4">Esquema conceptual de financiación del proyecto. </p>
                         </div>
                     </div>
@@ -307,7 +320,26 @@
         </div>
     </footer>
 
+    <!-- Image Modal -->
+    <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center z-[1000] hidden">
+        <div class="relative max-w-5xl max-h-5xl p-4">
+            <button class="absolute top-2 right-2 text-white text-4xl font-bold p-2 leading-none hover:text-gray-300 transition-colors" onclick="closeModal()">&times;</button>
+            <img id="modalImage" src="" alt="Ampliada" class="max-w-full max-h-[90vh] object-contain rounded-lg shadow-xl">
+        </div>
+    </div>
+
     <script>
+        // Modal Functions
+        function openModal(src) {
+            document.getElementById('modalImage').src = src;
+            document.getElementById('imageModal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('imageModal').classList.add('hidden');
+            document.getElementById('modalImage').src = ''; // Clear image to save memory
+        }
+
         document.addEventListener('DOMContentLoaded', () => {
             const sections = document.querySelectorAll('main section');
             const navLinks = document.querySelectorAll('.nav-link');
