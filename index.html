@@ -28,6 +28,8 @@
         /* Custom scrollbar for a cleaner look (optional, browser dependent) */
         ::-webkit-scrollbar {
             width: 8px;
+            /* Hide scrollbar for carousels */
+            display: none; /* For Webkit browsers (Chrome, Safari, Edge) */
         }
         ::-webkit-scrollbar-track {
             background: #e0dcd4; /* Lighter beige */
@@ -39,6 +41,11 @@
         ::-webkit-scrollbar-thumb:hover {
             background: #8b8374; /* Darker muted gray-brown */
         }
+        /* For Firefox */
+        .scroll-container {
+            scrollbar-width: none; /* Hide scrollbar for Firefox */
+        }
+
 
         /* Styles for basic section animations (fade-in slide-up) */
         .fade-in-slide-up {
@@ -51,11 +58,11 @@
             transform: translateY(0);
         }
 
-        /* Styles for the animated cards */
+        /* Styles for the animated cards (for carousels) */
         .animated-card {
             min-width: 100%; /* Full width on small screens */
-            opacity: 0; /* Initially hidden for animation */
-            transform: translateY(20px); /* Initially slightly down */
+            opacity: 0.5; /* Slightly faded when not active */
+            transform: translateY(20px);
             transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out, box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out; /* Added transitions */
             scroll-snap-align: center; /* Snap to center */
             display: flex;
@@ -64,9 +71,10 @@
             align-items: center;
             border: 2px solid #E0DCD4; /* Subtle border */
             box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); /* Subtle shadow */
+            flex-shrink: 0; /* Prevent shrinking in flex container */
         }
         .animated-card.active {
-            opacity: 1; /* Fully visible when active */
+            opacity: 1;
             transform: translateY(0);
             border-color: #227F6D; /* Highlight active card with accent color */
             box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1); /* Stronger shadow for active */
@@ -76,17 +84,19 @@
             scroll-snap-type: x mandatory;
             -webkit-overflow-scrolling: touch; /* For iOS momentum scrolling */
             padding-bottom: 1rem; /* Add some padding to avoid scrollbar overlapping content */
+            display: flex; /* Ensure flex behavior for horizontal scrolling */
+            gap: 2rem; /* gap-8 */
         }
 
-        /* Specific for mobile view of animated cards */
+        /* Responsive adjustments for animated cards in carousels */
         @media (min-width: 768px) {
             .animated-card {
-                min-width: calc(50% - 16px); /* 2 cards per row with gap */
+                min-width: calc(50% - 1rem); /* 2 cards per row with gap */
             }
         }
         @media (min-width: 1024px) {
             .animated-card {
-                min-width: calc(33.333% - 21.333px); /* 3 cards per row with gap (32px gap / 3 cards) */
+                min-width: calc(33.333% - 1.333rem); /* 3 cards per row with gap (2rem gap / 3 cards) */
             }
         }
 
@@ -178,21 +188,21 @@
                             <!-- IMAGEN 1: Mapa del Valle de Punilla -->
                             <!-- Asegúrate de que 'mapa-vallehermoso.jpg' esté en 'assets/images/' en tu proyecto local. -->
                             <img src="assets/images/mapa-vallehermoso.jpg" alt="Mapa de la ubicación del Departamento Punilla y alrededores" class="w-full h-auto max-w-full rounded-lg object-contain cursor-pointer" onclick="openModal('assets/images/mapa-vallehermoso.jpg')" onerror="this.onerror=null; this.src='https://placehold.co/600x350/e0dcd4/3C3C3B?text=Mapa+no+cargado'; console.error('Error al cargar mapa-vallehermoso.jpg');">
-                            <p class="text-center text-sm text-gray-500 mt-4">Ubicación del Departamento Punilla y alrededores. [Image of Ubicación del Departamento Punilla dentro de la Provincia de Córdoba]</p>
+                            <p class="text-center text-sm text-gray-500 mt-4">Ubicación del Departamento Punilla y alrededores. </p>
                         </div>
                         <div class="flex-1 flex flex-col items-center justify-center p-2 border border-gray-200 rounded-lg bg-gray-50 hover:shadow-md transition-shadow cursor-pointer">
                             <!-- IMAGEN 2: Barrio San José Obrero -->
                             <!-- ASEGÚRATE de que el nombre del archivo local sea EXACTAMENTE 'Barrio San Jose Obrero.png' o ajusta la ruta. -->
-                            <img src="assets/images/Barrio San Jose Obrero.png" alt="Vista satelital del Barrio San José Obrero" class="w-full h-auto max-w-full rounded-lg object-contain cursor-pointer" onclick="openModal('assets/images/Barrio San Jose Obrero.png')" onerror="this.onerror=null; this.src='https://placehold.co/600x350/e0dcd4/3C3C3B?text=Barrio+no+cargado'; console.error('Error al cargar Barrio San Jose Obrero.png');">
-                            <p class="text-center text-sm text-gray-500 mt-4">Vista satelital del Barrio San José Obrero: evolución temporal. [Image of Vista satelital del Barrio San José Obrero]</p>
+                            <img src="assets/images/Barrio_Obrero.png" alt="Vista satelital del Barrio San José Obrero" class="w-full h-auto max-w-full rounded-lg object-contain cursor-pointer" onclick="openModal('assets/images/Barrio San Jose Obrero.png')" onerror="this.onerror=null; this.src='https://placehold.co/600x350/e0dcd4/3C3C3B?text=Barrio+no+cargado'; console.error('Error al cargar Barrio San Jose Obrero.png');">
+                            <p class="text-center text-sm text-gray-500 mt-4">Vista satelital del Barrio San José Obrero: evolución temporal. </p>
                         </div>
                     </div>
 
                     <!-- Video timelapse del micro-basural -->
                     <div class="flex justify-center my-10">
-                        <!-- ASEGÚRATE de que el nombre del archivo local sea EXACTAMENTE 'Timelapse.mp4' o 'Timelapse Basural.mp4' y ajusta la ruta. -->
-                        <video class="w-full max-w-3xl rounded-lg shadow-md aspect-video" autoplay loop muted playsinline controls onerror="console.error('Error al cargar Timelapse.mp4 o Timelapse Basural.mp4. Verifica el nombre exacto y la ruta local. ');">
-                            <source src="assets/videos/Timelapse.mp4" type="video/mp4">
+                        <!-- ASEGÚRATE de que el nombre del archivo local sea EXACTAMENTE 'basural.mp4' y ajusta la ruta. -->
+                        <video class="w-full max-w-3xl rounded-lg shadow-md aspect-video" autoplay loop muted playsinline controls onerror="console.error('Error al cargar basural.mp4. Verifica el nombre exacto y la ruta local.');">
+                            <source src="assets/videos/basural.mp4" type="video/mp4">
                             Su navegador no soporta el elemento de video.
                         </video>
                     </div>
@@ -238,10 +248,10 @@
             </div>
         </section>
 
-        <!-- Sección de Propuestas Estratégicas -->
+        <!-- Sección de Propuestas Estratégicas - Carousel Re-implementado -->
         <section id="propuestas" class="py-20 md:py-32 bg-white shadow-inner">
-            <div class="container mx-auto px-6 max-w-6xl">
-                <div class="text-center mb-16 fade-in-slide-up">
+            <div class="container mx-auto px-6 max-w-6xl fade-in-slide-up">
+                <div class="text-center mb-16">
                     <h2 class="text-3xl md:text-4xl font-bold text-[#2C5E54] mb-4">Propuestas Estratégicas: 5 Programas Clave</h2>
                     <p class="text-lg text-gray-600 max-w-3xl mx-auto">
                         Nuestra propuesta se materializa a través de 5 programas que abordan las deficiencias del sistema actual y promueven la sostenibilidad.
@@ -249,7 +259,7 @@
                 </div>
 
                 <div class="relative">
-                    <div id="propuestas-container" class="flex overflow-x-scroll scroll-container snap-x snap-mandatory gap-8 p-4 md:p-8 rounded-xl shadow-lg bg-white border border-gray-100">
+                    <div id="propuestas-container" class="flex overflow-x-scroll scroll-container snap-x snap-mandatory rounded-xl shadow-lg bg-white border border-gray-100 p-4 md:p-8">
                         <!-- Propuesta Cards will be injected here by JavaScript -->
                     </div>
                     <button id="prevPropuestaBtn" class="absolute left-0 top-1/2 -translate-y-1/2 bg-[#227F6D] text-white p-3 rounded-full shadow-lg hover:bg-[#1a6355] transition-all hidden md:block">
@@ -265,10 +275,10 @@
             </div>
         </section>
 
-        <!-- Sección de Proyección a Futuro (Dimensiones Clave) -->
+        <!-- Sección de Proyección a Futuro (Dimensiones Clave) - Carousel Re-implementado -->
         <section id="dimensiones" class="py-20 md:py-32 bg-[#EAE8E1] shadow-inner">
-            <div class="container mx-auto px-6 max-w-6xl">
-                <div class="text-center mb-16 fade-in-slide-up">
+            <div class="container mx-auto px-6 max-w-6xl fade-in-slide-up">
+                <div class="text-center mb-16">
                     <h2 class="text-3xl md:text-4xl font-bold text-[#2C5E54] mb-4">Proyección a Futuro: 5 Dimensiones Clave</h2>
                     <p class="text-lg text-gray-600 max-w-3xl mx-auto">
                         La implementación de nuestro plan tiene el potencial de transformar a Cosquín en un modelo de gestión integral, abarcando diversas áreas de impacto.
@@ -276,7 +286,7 @@
                 </div>
 
                 <div class="relative">
-                    <div id="dimensiones-container" class="flex overflow-x-scroll scroll-container snap-x snap-mandatory gap-8 p-4 md:p-8 rounded-xl shadow-lg bg-white border border-gray-100">
+                    <div id="dimensiones-container" class="flex overflow-x-scroll scroll-container snap-x snap-mandatory rounded-xl shadow-lg bg-white border border-gray-100 p-4 md:p-8">
                         <!-- Dimensión Cards will be injected here by JavaScript -->
                     </div>
                     <button id="prevDimensionBtn" class="absolute left-0 top-1/2 -translate-y-1/2 bg-[#227F6D] text-white p-3 rounded-full shadow-lg hover:bg-[#1a6355] transition-all hidden md:block">
@@ -396,7 +406,7 @@
 
             const propuestasContent = [
                 { icon: '♻️', title: '1. Nodo Local de Reciclado', desc: 'Centro de acopio, clasificación y valorización; corazón de la gestión integral.' },
-                { icon: '🌱', title: '2. Separación en Origen', desc: 'Fomenta el cambio cultural y la recolección diferenciada en la comunidad.' },
+                { icon: '�', title: '2. Separación en Origen', desc: 'Fomenta el cambio cultural y la recolección diferenciada en la comunidad.' },
                 { icon: '🎉', title: '3. Cosquín, Festival Sostenible', desc: 'Reduce el impacto ambiental en grandes eventos y la temporada turística.' },
                 { icon: '🏢', title: '4. Registro Grandes Generadores', desc: 'Regula y optimiza la gestión de residuos de comercios y empresas.' },
                 { icon: '🤝', title: '5. Registro Recuperadores', desc: 'Formaliza y organiza a los trabajadores de la economía circular.' }
@@ -410,18 +420,21 @@
                 { icon: '🏛️', title: 'Transformación Institucional', desc: 'Gobernanza participativa, marco legal sólido y capacidad de gestión. 📋' }
             ];
 
-            function setupAnimatedSection(containerId, prevBtnId, nextBtnId, paginationId, contentArray) {
+            // Function to setup animated sections (carousels)
+            function setupAnimatedCarousel(containerId, prevBtnId, nextBtnId, paginationId, contentArray, autoplayInterval = 5000) {
                 const container = document.getElementById(containerId);
                 const prevBtn = document.getElementById(prevBtnId);
                 const nextBtn = document.getElementById(nextBtnId);
                 const paginationContainer = document.getElementById(paginationId);
                 let currentIndex = 0;
+                let autoScrollInterval;
 
                 function renderCards() {
                     container.innerHTML = '';
                     paginationContainer.innerHTML = '';
                     contentArray.forEach((item, index) => {
                         const card = document.createElement('div');
+                        // Use animated-card class for carousel specific styling
                         card.className = `animated-card bg-white p-8 rounded-xl shadow-md border border-gray-100 flex flex-col items-center text-center justify-center space-y-4 flex-shrink-0`;
                         card.innerHTML = `
                             <div class="text-5xl mb-2">${item.icon}</div>
@@ -433,9 +446,11 @@
                         const dot = document.createElement('div');
                         dot.className = `w-3 h-3 rounded-full bg-gray-300 cursor-pointer transition-colors`;
                         dot.addEventListener('click', () => {
+                            clearInterval(autoScrollInterval); // Stop autoplay on manual interaction
                             currentIndex = index;
                             scrollToCard(currentIndex);
                             updatePagination();
+                            startAutoplay(); // Restart autoplay after a delay
                         });
                         paginationContainer.appendChild(dot);
                     });
@@ -452,7 +467,6 @@
                         // Calculate target scrollLeft to center the card
                         const targetScrollLeft = cardOffsetLeft - (containerWidth / 2) + (cardWidth / 2);
                         
-                        // Use behavior: 'smooth' for animation
                         container.scrollTo({
                             left: targetScrollLeft,
                             behavior: 'smooth'
@@ -483,20 +497,34 @@
                     });
                 }
 
-                prevBtn.addEventListener('click', (e) => {
-                    e.preventDefault(); // Prevent default scroll behavior
-                    currentIndex = (currentIndex > 0) ? currentIndex - 1 : contentArray.length - 1;
-                    scrollToCard(currentIndex);
-                    updateActiveCard();
-                });
-
-                nextBtn.addEventListener('click', (e) => {
-                    e.preventDefault(); // Prevent default scroll behavior
+                function showNextCard() {
                     currentIndex = (currentIndex < contentArray.length - 1) ? currentIndex + 1 : 0;
                     scrollToCard(currentIndex);
                     updateActiveCard();
+                }
+
+                function startAutoplay() {
+                    clearInterval(autoScrollInterval); // Clear any existing interval
+                    autoScrollInterval = setInterval(showNextCard, autoplayInterval);
+                }
+
+                prevBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    clearInterval(autoScrollInterval); // Stop autoplay on manual interaction
+                    currentIndex = (currentIndex > 0) ? currentIndex - 1 : contentArray.length - 1;
+                    scrollToCard(currentIndex);
+                    updateActiveCard();
+                    startAutoplay(); // Restart autoplay
                 });
 
+                nextBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    clearInterval(autoScrollInterval); // Stop autoplay on manual interaction
+                    showNextCard();
+                    startAutoplay(); // Restart autoplay
+                });
+
+                // Detect manual scroll to reset autoplay
                 container.addEventListener('scroll', () => {
                     let closestIndex = currentIndex;
                     let minDistance = Infinity;
@@ -511,17 +539,19 @@
                     });
 
                     if (closestIndex !== currentIndex) {
+                        clearInterval(autoScrollInterval); // Stop autoplay on manual scroll
                         currentIndex = closestIndex;
                         updateActiveCard();
+                        startAutoplay(); // Restart autoplay
                     }
                 });
 
                 renderCards();
-                updateActiveCard(); // Set initial active card
+                startAutoplay(); // Start autoplay initially
             }
 
-            setupAnimatedSection('propuestas-container', 'prevPropuestaBtn', 'nextPropuestaBtn', 'propuesta-pagination', propuestasContent);
-            setupAnimatedSection('dimensiones-container', 'prevDimensionBtn', 'nextDimensionBtn', 'dimension-pagination', dimensionesContent);
+            setupAnimatedCarousel('propuestas-container', 'prevPropuestaBtn', 'nextPropuestaBtn', 'propuesta-pagination', propuestasContent);
+            setupAnimatedCarousel('dimensiones-container', 'prevDimensionBtn', 'nextDimensionBtn', 'dimension-pagination', dimensionesContent);
         });
     </script>
 </body>
