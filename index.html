@@ -164,13 +164,13 @@
                         <div class="flex-1 min-w-0">
                             <!-- IMAGEN 1: Mapa del Valle de Punilla -->
                             <!-- Asegúrate de que 'mapa-vallehermoso.jpg' esté en 'assets/images/' en tu proyecto local. -->
-                            <img src="assets/images/mapa-vallehermoso.jpg" alt="Mapa de la ubicación del Departamento Punilla y alrededores" class="w-full rounded-lg shadow-md aspect-video object-cover">
+                            <img src="assets/images/mapa-vallehermoso.jpg" alt="Mapa de la ubicación del Departamento Punilla y alrededores" class="w-full h-auto max-w-full rounded-lg shadow-md aspect-video object-cover" onerror="this.onerror=null; this.src='https://placehold.co/600x350/e0dcd4/3C3C3B?text=Mapa+no+cargado'; console.error('Error al cargar mapa-vallehermoso.jpg');">
                             <p class="text-center text-sm text-gray-500 mt-4">Ubicación del Departamento Punilla y alrededores. </p>
                         </div>
                         <div class="flex-1 min-w-0">
                             <!-- IMAGEN 2: Barrio San José Obrero -->
                             <!-- Asegúrate de que 'Barrio San Jose Obrero.jpg' esté en 'assets/images/' en tu proyecto local. -->
-                            <img src="assets/images/Barrio San Jose Obrero.jpg" alt="Vista satelital del Barrio San José Obrero" class="w-full rounded-lg shadow-md aspect-video object-cover">
+                            <img src="assets/images/Barrio San Jose Obrero.jpg" alt="Vista satelital del Barrio San José Obrero" class="w-full h-auto max-w-full rounded-lg shadow-md aspect-video object-cover" onerror="this.onerror=null; this.src='https://placehold.co/600x350/e0dcd4/3C3C3B?text=Barrio+no+cargado'; console.error('Error al cargar Barrio San Jose Obrero.jpg');">
                             <p class="text-center text-sm text-gray-500 mt-4">Vista satelital del Barrio San José Obrero: evolución temporal. </p>
                         </div>
                     </div>
@@ -178,7 +178,7 @@
                     <!-- Video timelapse del micro-basural -->
                     <div class="flex justify-center my-10">
                         <!-- Asegúrate de que 'Timelapse Basural.mp4' esté en 'assets/videos/' en tu proyecto local. -->
-                        <video class="w-full max-w-3xl rounded-lg shadow-md aspect-video" autoplay loop muted playsinline>
+                        <video class="w-full max-w-3xl rounded-lg shadow-md aspect-video" autoplay loop muted playsinline onerror="console.error('Error al cargar Timelapse Basural.mp4');">
                             <source src="assets/videos/Timelapse Basural.mp4" type="video/mp4">
                             Su navegador no soporta el elemento de video.
                         </video>
@@ -211,13 +211,13 @@
                         <div class="flex-1 min-w-0">
                             <!-- IMAGEN 3: Plano Nodo Cosquín - Página 2 -->
                             <!-- Asegúrate de que 'Plano Nodo Cosquin-Página-2.png' esté en 'assets/images/' en tu proyecto local. -->
-                            <img src="assets/images/Plano Nodo Cosquin-Página-2.png" alt="Plano del Nodo de Reciclado Cosquín" class="w-full rounded-lg shadow-md aspect-video object-cover">
+                            <img src="assets/images/Plano Nodo Cosquin-Página-2.png" alt="Plano del Nodo de Reciclado Cosquín" class="w-full h-auto max-w-full rounded-lg shadow-md aspect-video object-cover" onerror="this.onerror=null; this.src='https://placehold.co/600x350/e0dcd4/3C3C3B?text=Plano+no+cargado'; console.error('Error al cargar Plano Nodo Cosquin-Página-2.png');">
                             <p class="text-center text-sm text-gray-500 mt-4">Plano detallado del Nodo de Reciclado de Cosquín. </p>
                         </div>
                         <div class="flex-1 min-w-0">
                             <!-- IMAGEN 4: Financiación -->
                             <!-- Asegúrate de que 'financiacion.png' esté en 'assets/images/' en tu proyecto local. -->
-                            <img src="assets/images/financiacion.png" alt="Esquema de financiación del proyecto" class="w-full rounded-lg shadow-md aspect-video object-cover">
+                            <img src="assets/images/financiacion.png" alt="Esquema de financiación del proyecto" class="w-full h-auto max-w-full rounded-lg shadow-md aspect-video object-cover" onerror="this.onerror=null; this.src='https://placehold.co/600x350/e0dcd4/3C3C3B?text=Financiación+no+cargada'; console.error('Error al cargar financiacion.png');">
                             <p class="text-center text-sm text-gray-500 mt-4">Esquema conceptual de financiación del proyecto. </p>
                         </div>
                     </div>
@@ -367,7 +367,7 @@
                 { icon: '🌱', title: '2. Separación en Origen', desc: 'Fomenta el cambio cultural y la recolección diferenciada en la comunidad.' },
                 { icon: '🎉', title: '3. Cosquín, Festival Sostenible', desc: 'Reduce el impacto ambiental en grandes eventos y la temporada turística.' },
                 { icon: '🏢', title: '4. Registro Grandes Generadores', desc: 'Regula y optimiza la gestión de residuos de comercios y empresas.' },
-                { icon: '�', title: '5. Registro Recuperadores', desc: 'Formaliza y organiza a los trabajadores de la economía circular.' }
+                { icon: '🤝', title: '5. Registro Recuperadores', desc: 'Formaliza y organiza a los trabajadores de la economía circular.' }
             ];
 
             const dimensionesContent = [
