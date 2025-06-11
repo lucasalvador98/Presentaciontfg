@@ -191,9 +191,7 @@
                             <p class="text-center text-sm text-gray-500 mt-4">Ubicación del Departamento Punilla y alrededores. </p>
                         </div>
                         <div class="flex-1 flex flex-col items-center justify-center p-2 border border-gray-200 rounded-lg bg-gray-50 hover:shadow-md transition-shadow cursor-pointer">
-                            <!-- IMAGEN 2: Barrio San José Obrero -->
-                            <!-- ASEGÚRATE de que el nombre del archivo local sea EXACTAMENTE 'Barrio San Jose Obrero.png' o ajusta la ruta. -->
-                            <img src="assets/images/Barrio_Obrero.png" alt="Vista satelital del Barrio San José Obrero" class="w-full h-auto max-w-full rounded-lg object-contain cursor-pointer" onclick="openModal('assets/images/Barrio San Jose Obrero.png')" onerror="this.onerror=null; this.src='https://placehold.co/600x350/e0dcd4/3C3C3B?text=Barrio+no+cargado'; console.error('Error al cargar Barrio San Jose Obrero.png');">
+                            <img src="assets/images/Barrio_Obrero.png" alt="Vista satelital del Barrio San José Obrero" class="w-full h-auto max-w-full rounded-lg object-contain cursor-pointer" onclick="openModal('assets/images/Barrio_Obrero.png')" onerror="this.onerror=null; this.src='https://placehold.co/600x350/e0dcd4/3C3C3B?text=Barrio+no+cargado'; console.error('Error al cargar Barrio San Jose Obrero.png. Revisa nombre/extensión.');">
                             <p class="text-center text-sm text-gray-500 mt-4">Vista satelital del Barrio San José Obrero: evolución temporal. </p>
                         </div>
                     </div>
@@ -232,11 +230,11 @@
                     
                     <div class="flex flex-col md:flex-row justify-center items-stretch my-10 gap-8">
                         <div class="flex-1 flex flex-col items-center justify-center p-2 border border-gray-200 rounded-lg bg-gray-50 hover:shadow-md transition-shadow cursor-pointer">
-                            <img src="assets/images/infografia.png" alt="Plano del Nodo de Reciclado Cosquín" class="w-full h-auto max-w-full rounded-lg object-contain cursor-pointer" onclick="openModal('assets/images/Plano Nodo Cosquin-Página-2.png')" onerror="this.onerror=null; this.src='https://placehold.co/600x350/e0dcd4/3C3C3B?text=Plano+no+cargado'; console.error('Error al cargar Plano Nodo Cosquin-Página-2.png');">
+                            <img src="assets/images/infografia.png" alt="Plano del Nodo de Reciclado Cosquín" class="w-full h-auto max-w-full rounded-lg object-contain cursor-pointer" onclick="openModal('assets/images/infografia.png')" onerror="this.onerror=null; this.src='https://placehold.co/600x350/e0dcd4/3C3C3B?text=Plano+no+cargado'; console.error('Error al cargar Plano Nodo Cosquin-Página-2.png');">
                             <p class="text-center text-sm text-gray-500 mt-4">Plano detallado del Nodo de Reciclado de Cosquín. </p>
                         </div>
                         <div class="flex-1 flex flex-col items-center justify-center p-2 border border-gray-200 rounded-lg bg-gray-50 hover:shadow-md transition-shadow cursor-pointer">
-                            <img src="assets/images/Financiamiento.png" alt="Esquema de financiación del proyecto" class="w-full h-auto max-w-full rounded-lg object-contain cursor-pointer" onclick="openModal('assets/images/financiacion.png')" onerror="this.onerror=null; this.src='https://placehold.co/600x350/e0dcd4/3C3C3B?text=Financiación+no+cargada'; console.error('Error al cargar financiacion.png');">
+                            <img src="assets/images/Financiamiento.png" alt="Esquema de financiación del proyecto" class="w-full h-auto max-w-full rounded-lg object-contain cursor-pointer" onclick="openModal('assets/images/Financiamiento.png')" onerror="this.onerror=null; this.src='https://placehold.co/600x350/e0dcd4/3C3C3B?text=Financiación+no+cargada'; console.error('Error al cargar financiacion.png. Verifica nombre/extensión.');">
                             <p class="text-center text-sm text-gray-500 mt-4">Esquema conceptual de financiación del proyecto. </p>
                         </div>
                     </div>
@@ -327,9 +325,9 @@
     </footer>
 
     <!-- Image Modal -->
-    <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center z-[1000] hidden">
+    <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center z-[1000] hidden" onclick="closeModal(event)">
         <div class="relative max-w-5xl max-h-5xl p-4">
-            <button class="absolute top-2 right-2 text-white text-4xl font-bold p-2 leading-none hover:text-gray-300 transition-colors" onclick="closeModal()">&times;</button>
+            <button class="absolute top-2 right-2 text-white text-4xl font-bold p-2 leading-none hover:text-gray-300 transition-colors" onclick="closeModal(event)">&times;</button>
             <img id="modalImage" src="" alt="Ampliada" class="max-w-full max-h-[90vh] object-contain rounded-lg shadow-xl">
         </div>
     </div>
@@ -341,9 +339,17 @@
             document.getElementById('imageModal').classList.remove('hidden');
         }
 
-        function closeModal() {
-            document.getElementById('imageModal').classList.add('hidden');
-            document.getElementById('modalImage').src = ''; // Clear image to save memory
+        // Modificamos closeModal para que cierre solo si se hace clic fuera de la imagen ampliada
+        function closeModal(event) {
+            const modalImage = document.getElementById('modalImage');
+            const imageModal = document.getElementById('imageModal');
+
+            // Si el clic no fue directamente sobre la imagen y el clic fue dentro del modal
+            // O si el evento es del botón 'X' (sin target específico en el modal)
+            if (event.target === imageModal || event.target.tagName === 'BUTTON') {
+                imageModal.classList.add('hidden');
+                modalImage.src = ''; // Clear image to save memory
+            }
         }
 
         document.addEventListener('DOMContentLoaded', () => {
@@ -402,7 +408,7 @@
 
             const propuestasContent = [
                 { icon: '♻️', title: '1. Nodo Local de Reciclado', desc: 'Centro de acopio, clasificación y valorización; corazón de la gestión integral.' },
-                { icon: '�', title: '2. Separación en Origen', desc: 'Fomenta el cambio cultural y la recolección diferenciada en la comunidad.' },
+                { icon: '🌱', title: '2. Separación en Origen', desc: 'Fomenta el cambio cultural y la recolección diferenciada en la comunidad.' },
                 { icon: '🎉', title: '3. Cosquín, Festival Sostenible', desc: 'Reduce el impacto ambiental en grandes eventos y la temporada turística.' },
                 { icon: '🏢', title: '4. Registro Grandes Generadores', desc: 'Regula y optimiza la gestión de residuos de comercios y empresas.' },
                 { icon: '🤝', title: '5. Registro Recuperadores', desc: 'Formaliza y organiza a los trabajadores de la economía circular.' }
@@ -411,7 +417,7 @@
             const dimensionesContent = [
                 { icon: '🌍', title: 'Sostenibilidad Ambiental', desc: 'Menos contaminación, más recursos y mitigación del impacto del basural. 🌳' },
                 { icon: '👥', title: 'Inclusión Social y Empleo Verde', desc: 'Dignificación laboral, nuevos puestos de trabajo y fortalecimiento social. 👨‍🏭' },
-                { icon: '💰', title: 'Desarrollo Económico', desc: 'Nuevas cadenas de valor, turismo sostenible y ahorro municipal. 📈' },
+                { icon: '💰', title: 'Desarrollo Económico', desc: 'Nuevas cadenas de valor, turismo sostenible y ahorro municipal.📈' },
                 { icon: '💡', title: 'Transformación Cultural', desc: 'Educación ambiental, fomento de hábitos responsables y ciudadanía activa. 📚' },
                 { icon: '🏛️', title: 'Transformación Institucional', desc: 'Gobernanza participativa, marco legal sólido y capacidad de gestión. 📋' }
             ];
