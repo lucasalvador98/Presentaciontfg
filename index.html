@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plan GIIRSU Cosquín - Defensa de Tesis</title>
+    <title>Plan GIIRSU Cosquín</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -119,7 +119,6 @@
     <header id="header" class="bg-[#F8F7F4]/90 backdrop-blur-sm sticky top-0 z-50 shadow-sm">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <div class="text-xl md:text-2xl font-bold text-[#2C5E54]">
-                Defensa de Tesis: GIIRSU Cosquín
             </div>
             <div class="hidden md:flex items-center space-x-8">
                 <a href="#objetivos" class="nav-link text-gray-700 hover:text-[#227F6D]">Objetivos</a>
@@ -143,6 +142,8 @@
                 </p>
                 <p class="mt-12 text-md md:text-lg text-gray-500 font-medium">Trabajo Final de Grado</p>
                 <p class="text-sm md:text-base text-gray-500">Anahí Castro y Luca La Porta</p>
+                <p class="text-sm md:text-base text-gray-500">Directora: Carolina Nievas Palacios</p>
+
             </div>
         </section>
 
@@ -188,7 +189,7 @@
                             <!-- IMAGEN 1: Mapa del Valle de Punilla -->
                             <!-- Asegúrate de que 'mapa-vallehermoso.jpg' esté en 'assets/images/' en tu proyecto local. -->
                             <img src="assets/images/mapa-vallehermoso.jpg" alt="Mapa de la ubicación del Departamento Punilla y alrededores" class="w-full h-auto max-w-full rounded-lg object-contain cursor-pointer" onclick="openModal('assets/images/mapa-vallehermoso.jpg')" onerror="this.onerror=null; this.src='https://placehold.co/600x350/e0dcd4/3C3C3B?text=Mapa+no+cargado'; console.error('Error al cargar mapa-vallehermoso.jpg');">
-                            <p class="text-center text-sm text-gray-500 mt-4">Ubicación del Departamento Punilla y alrededores. </p>
+                            <p class="text-center text-sm text-gray-500 mt-4">Ubicación del Departamento Punilla y alrededores.</p>
                         </div>
                         <div class="flex-1 flex flex-col items-center justify-center p-2 border border-gray-200 rounded-lg bg-gray-50 hover:shadow-md transition-shadow cursor-pointer">
                             <img src="assets/images/Barrio_Obrero.png" alt="Vista satelital del Barrio San José Obrero" class="w-full h-auto max-w-full rounded-lg object-contain cursor-pointer" onclick="openModal('assets/images/Barrio_Obrero.png')" onerror="this.onerror=null; this.src='https://placehold.co/600x350/e0dcd4/3C3C3B?text=Barrio+no+cargado'; console.error('Error al cargar Barrio San Jose Obrero.png. Revisa nombre/extensión.');">
@@ -196,15 +197,17 @@
                         </div>
                     </div>
 
-                    <!-- Video timelapse del micro-basural -->
-                    <div class="flex justify-center my-10">
-                        <!-- ASEGÚRATE de que el nombre del archivo local sea EXACTAMENTE 'basural.mp4' y ajusta la ruta. -->
-                        <video class="w-full max-w-3xl rounded-lg shadow-md aspect-video" autoplay loop muted playsinline controls onerror="console.error('Error al cargar basural.mp4. Verifica el nombre exacto y la ruta local.');">
-                            <source src="assets/videos/basural.mp4" type="video/mp4">
-                            Su navegador no soporta el elemento de video.
-                        </video>
+                    <!-- Video timelapse incrustado desde YouTube -->
+                    <div class="flex justify-center my-10 w-full">
+                        <!-- ID del video de YouTube: KBfdDIj6rtA -->
+                        <iframe class="w-full max-w-3xl rounded-lg shadow-md aspect-video" 
+                                src="https://www.youtube-nocookie.com/embed/KBfdDIj6rtA?si=-SQ0xjJWEosvlm7g&controls=1" 
+                                frameborder="0" 
+                                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                allowfullscreen>
+                        </iframe>
                     </div>
-                    <p class="text-center text-sm text-gray-500 mt-4">Timelapse: Crecimiento del micro-basural de Cosquín a lo largo de los años. 🗑️</p>
+                    <p class="text-center text-sm text-gray-500 mt-4">Timelapse: Crecimiento del micro-basural de Cosquín a lo largo de los años. </p>
                 </div>
             </div>
         </section>
@@ -229,15 +232,42 @@
                     </p>
                     
                     <div class="flex flex-col md:flex-row justify-center items-stretch my-10 gap-8">
-                        <div class="flex-1 flex flex-col items-center justify-center p-2 border border-gray-200 rounded-lg bg-gray-50 hover:shadow-md transition-shadow cursor-pointer">
-                            <img src="assets/images/infografia.png" alt="Plano del Nodo de Reciclado Cosquín" class="w-full h-auto max-w-full rounded-lg object-contain cursor-pointer" onclick="openModal('assets/images/infografia.png')" onerror="this.onerror=null; this.src='https://placehold.co/600x350/e0dcd4/3C3C3B?text=Plano+no+cargado'; console.error('Error al cargar Plano Nodo Cosquin-Página-2.png');">
-                            <p class="text-center text-sm text-gray-500 mt-4">Plano detallado del Nodo de Reciclado de Cosquín. </p>
-                        </div>
-                        <div class="flex-1 flex flex-col items-center justify-center p-2 border border-gray-200 rounded-lg bg-gray-50 hover:shadow-md transition-shadow cursor-pointer">
-                            <img src="assets/images/Financiamiento.png" alt="Esquema de financiación del proyecto" class="w-full h-auto max-w-full rounded-lg object-contain cursor-pointer" onclick="openModal('assets/images/Financiamiento.png')" onerror="this.onerror=null; this.src='https://placehold.co/600x350/e0dcd4/3C3C3B?text=Financiación+no+cargada'; console.error('Error al cargar financiacion.png. Verifica nombre/extensión.');">
-                            <p class="text-center text-sm text-gray-500 mt-4">Esquema conceptual de financiación del proyecto. </p>
-                        </div>
+                        <!-- IMAGEN 3: Infografía del diagnóstico -->
+                        <img src="assets/images/infografia.png" alt="Plano del Nodo de Reciclado Cosquín" class="w-full h-auto max-w-md rounded-lg object-contain cursor-pointer" onclick="openModal('assets/images/infografia.png')" onerror="this.onerror=null; this.src='https://placehold.co/600x350/e0dcd4/3C3C3B?text=Infografía+no+cargada'; console.error('Error al cargar infografia.png');">
+                        <p class="text-center text-sm text-gray-500 mt-4"></p>
                     </div>
+                    <div class="flex-1 flex flex-col items-center justify-center p-2 border border-gray-200 rounded-lg bg-gray-50 hover:shadow-md transition-shadow cursor-pointer">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Nueva Sección: Mecanismos de Financiamiento -->
+        <section id="financiamiento" class="py-20 md:py-32 bg-[#EAE8E1] shadow-inner">
+            <div class="container mx-auto px-6 max-w-5xl">
+                <div class="text-center mb-16 fade-in-slide-up">
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#2C5E54] mb-4">Mecanismos de Financiamiento</h2>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                        La implementación de un plan de Gestión Integral e Inclusiva de Residuos Sólidos Urbanos (GIIRSU) requiere de mecanismos de financiamiento sostenibles.
+                    </p>
+                </div>
+                <div class="bg-white p-8 md:p-12 rounded-xl shadow-lg border border-gray-100 fade-in-slide-up">
+                    <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-6">
+                        Para asegurar los recursos necesarios en la implementación de la GIIRSU, es fundamental la definición de mecanismos de financiamiento adaptados a las realidades locales. Esto implica desarrollar instrumentos que faciliten la inversión en infraestructura, equipos y capacitación, y que consoliden los sistemas de co-gestión entre los actores involucrados.
+                    </p>
+                    <ul class="list-disc list-inside text-base md:text-lg text-gray-700 leading-relaxed space-y-4">
+                        <li><strong class="text-[#227F6D]">Marco Normativo Adaptado:</strong> Es indispensable la elaboración y puesta en marcha de ordenanzas locales y convenios de co-gestión, en coordinación con organismos provinciales y municipales, para distribuir los costos operativos y de inversión de manera equitativa.</li>
+                        <li><strong class="text-[#227F6D]">Matriz de Costos GIIRSU:</strong> La utilización de herramientas como la Matriz de Costos del Ministerio de Ambiente y Desarrollo Sostenible permite calcular con precisión los gastos fijos y variables, facilitando propuestas de financiamiento que integren recursos propios, subvenciones y asistencia técnica.</li>
+                        <li><strong class="text-[#227F6D]">Establecimiento de Multas:</strong> La penalización a grandes generadores por incumplimiento de protocolos de separación y disposición de residuos busca conformar fondos para la inversión en actividades de la cooperativa o el Municipio.</li>
+                        <li><strong class="text-[#227F6D]">Alianzas Público-Privadas:</strong> La articulación de mecanismos de asistencia técnica y financiamiento a través de estas alianzas es clave para complementar recursos locales, ampliar la capacidad de inversión e incorporar experiencias y tecnologías que optimicen la gestión.</li>
+                        <li><strong class="text-[#227F6D]">Proyectos Productivos Circulares:</strong> La integración de la economía circular en la planificación financiera promueve proyectos que transforman residuos en insumos para nuevas cadenas de valor, generando empleo y aportando valor agregado.</li>
+                    </ul>
+
+                    <div class="flex justify-center my-10">
+                        <!-- IMAGEN: Esquema de Financiamiento -->
+                        <img src="assets/images/Financiamiento.png" alt="Esquema de Financiamiento de sistemas GIIRSU" class="w-full h-auto max-w-full rounded-lg object-contain cursor-pointer shadow-lg" onclick="openModal('assets/images/Financiamiento.png')" onerror="this.onerror=null; this.src='https://placehold.co/700x400/e0dcd4/3C3C3B?text=Esquema+de+Financiamiento+no+cargado'; console.error('Error al cargar Financiamiento.png. Verifica nombre/extensión.');">
+                    </div>
+                    <p class="text-center text-sm text-gray-500 mt-4">Esquema conceptual de financiación de sistemas GIIRSU. </p>
                 </div>
             </div>
         </section>
