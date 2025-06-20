@@ -61,7 +61,7 @@
         /* Styles for the animated cards (for carousels) */
         .animated-card {
             min-width: 100%; /* Full width on small screens */
-            opacity: 0.5; /* Slightly faded when not active */
+            /* Removed opacity: 0.5; to prevent "gray" appearance for static cards */
             transform: translateY(20px);
             transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out, box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out; /* Added transitions */
             scroll-snap-align: center; /* Snap to center */
@@ -72,9 +72,10 @@
             border: 2px solid #E0DCD4; /* Subtle border */
             box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); /* Subtle shadow */
             flex-shrink: 0; /* Prevent shrinking in flex container */
+            opacity: 1; /* Ensure full visibility for all cards */
         }
         .animated-card.active {
-            opacity: 1;
+            opacity: 1; /* Kept for carousel active state, though opacity removed from base */
             transform: translateY(0);
             border-color: #227F6D; /* Highlight active card with accent color */
             box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1); /* Stronger shadow for active */
@@ -119,12 +120,14 @@
     <header id="header" class="bg-[#F8F7F4]/90 backdrop-blur-sm sticky top-0 z-50 shadow-sm">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <div class="text-xl md:text-2xl font-bold text-[#2C5E54]">
+                Defensa de Tesis: GIIRSU Cosquín
             </div>
             <div class="hidden md:flex items-center space-x-8">
                 <a href="#objetivos" class="nav-link text-gray-700 hover:text-[#227F6D]">Objetivos</a>
                 <a href="#contexto-problema" class="nav-link text-gray-700 hover:text-[#227F6D]">Contexto y Problema</a>
                 <a href="#metodologia" class="nav-link text-gray-700 hover:text-[#227F6D]">Metodología</a>
                 <a href="#propuestas" class="nav-link text-gray-700 hover:text-[#227F6D]">Propuestas</a>
+                <a href="#financiamiento" class="nav-link text-gray-700 hover:text-[#227F6D]">Financiamiento</a> <!-- Moved here -->
                 <a href="#dimensiones" class="nav-link text-gray-700 hover:text-[#227F6D]">Dimensiones</a>
                 <a href="#conclusion" class="nav-link text-gray-700 hover:text-[#227F6D]">Conclusión</a>
             </div>
@@ -135,10 +138,10 @@
         <section id="hero" class="py-24 md:py-40 bg-[url('assets/images/plastic_bottle.jpg')] bg-cover bg-center bg-no-repeat shadow-inner">
             <div class="container mx-auto px-6 text-center fade-in-slide-up">
                 <h1 class="text-4xl md:text-6xl font-extrabold text-[#2C5E54] leading-tight mb-4">
-                    Gestión Integral de Residuos Sólidos Urbanos
+                    Gestión Integral de Residuos Sólidos Urbanos en Cosquin
                 </h1>
                 <p class="mt-4 text-lg md:text-2xl text-gray-700 max-w-4xl mx-auto font-light">
-                    Un enfoque desde la <span class="font-semibold text-[#227F6D]">Economía Circular</span> para transformar el futuro de Cosquín.
+                    Un enfoque desde la <span class="font-semibold text-[#227F6D]">Economía Circular</span>
                 </p>
             </div>
         </section>
@@ -146,9 +149,9 @@
         <section id="objetivos" class="py-20 md:py-32">
             <div class="container mx-auto px-6 max-w-5xl">
                 <div class="text-center mb-16 fade-in-slide-up">
-                    <h2 class="text-3xl md:text-4xl font-bold text-[#2C5E54] mb-4">Objetivos del Proyecto</h2>
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#2C5E54] mb-4"></h2>
                     <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-                        Nuestra investigación busca contribuir al diseño de un plan de gestión integral de RSU en Cosquín, con una visión de economía circular.
+                        Este proyecto busca realizar un aporte para el abordaje de las problemáticas ambientales a partir del diseño de un plan de gestión integral de RSU y proponiendo la generación de empleo verde en Cosquín.
                     </p>
                 </div>
                 <div class="bg-white p-8 md:p-12 rounded-xl shadow-lg border border-gray-100 fade-in-slide-up">
@@ -170,25 +173,25 @@
         <section id="contexto-problema" class="py-20 md:py-32 bg-[#EAE8E1] shadow-inner">
             <div class="container mx-auto px-6 max-w-5xl">
                 <div class="text-center mb-16 fade-in-slide-up">
-                    <h2 class="text-3xl md:text-4xl font-bold text-[#2C5E54] mb-4">Contexto y Diagnóstico del Problema</h2>
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#2C5E54] mb-4">Marco contextual y Diagnóstico</h2>
                     <p class="text-lg text-gray-600 max-w-3xl mx-auto">
                         Un vistazo a Cosquín y la problemática actual de sus residuos, con el timelapse que ilustra el crecimiento del basural a cielo abierto.
                     </p>
                 </div>
                 <div class="bg-white p-8 md:p-12 rounded-xl shadow-lg border border-gray-100 fade-in-slide-up">
                     <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-6">
-                        Cosquín, ciudad turística del Valle de Punilla, enfrenta una gestión de residuos obsoleta y sin planificación, agravada por el crecimiento demográfico (27% entre 2010-2022). Se observan basurales y la ausencia de un sitio de disposición final adecuado, generando contaminación y riesgos sanitarios. La economía local, dependiente del turismo, necesita estrategias resilientes y la promoción de empleos verdes.
+                        Cosquín, ubicada a 45 km al noroeste de la capital cordobesa y cabecera del departamento de Punilla, enfrenta una gestión de residuos obsoleta y sin planificación, agravada por el crecimiento demográfico (27% entre 2010-2022). Se observan basurales y la ausencia de un sitio de disposición final adecuado, generando contaminación y riesgos sanitarios. La economía local, dependiente del turismo, necesita estrategias resilientes y la promoción de empleos verdes.
                     </p>
                     
                     <div class="flex flex-col md:flex-row justify-center items-stretch my-10 gap-8">
                         <div class="flex-1 flex flex-col items-center justify-center p-2 border border-gray-200 rounded-lg bg-gray-50 hover:shadow-md transition-shadow cursor-pointer">
                             <!-- IMAGEN 1: Mapa del Valle de Punilla -->
-                            <!-- Asegúrate de que 'mapa-vallehermoso.jpg' esté en 'assets/images/' en tu proyecto local. -->
                             <img src="assets/images/mapa-vallehermoso.jpg" alt="Mapa de la ubicación del Departamento Punilla y alrededores" class="w-full h-auto max-w-full rounded-lg object-contain cursor-pointer" onclick="openModal('assets/images/mapa-vallehermoso.jpg')" onerror="this.onerror=null; this.src='https://placehold.co/600x350/e0dcd4/3C3C3B?text=Mapa+no+cargado'; console.error('Error al cargar mapa-vallehermoso.jpg');">
-                            <p class="text-center text-sm text-gray-500 mt-4">Ubicación del Departamento Punilla y alrededores.</p>
+                            <p class="text-center text-sm text-gray-500 mt-4">Ubicación del Departamento Punilla y alrededores. </p>
                         </div>
                         <div class="flex-1 flex flex-col items-center justify-center p-2 border border-gray-200 rounded-lg bg-gray-50 hover:shadow-md transition-shadow cursor-pointer">
-                            <img src="assets/images/Barrio_Obrero.png" alt="Vista satelital del Barrio San José Obrero" class="w-full h-auto max-w-full rounded-lg object-contain cursor-pointer" onclick="openModal('assets/images/Barrio_Obrero.png')" onerror="this.onerror=null; this.src='https://placehold.co/600x350/e0dcd4/3C3C3B?text=Barrio+no+cargado'; console.error('Error al cargar Barrio San Jose Obrero.png. Revisa nombre/extensión.');">
+                            <!-- IMAGEN 2: Barrio San José Obrero -->
+                            <img src="assets/images/Barrio_Obrero.png" alt="Vista satelital del Barrio San José Obrero" class="w-full h-auto max-w-full rounded-lg object-contain cursor-pointer" onclick="openModal('assets/images/Barrio_Obrero.png')" onerror="this.onerror=null; this.src='https://placehold.co/600x350/e0dcd4/3C3C3B?text=Barrio+no+cargado'; console.error('Error al cargar Barrio_Obrero.png. Revisa nombre/extensión.');">
                             <p class="text-center text-sm text-gray-500 mt-4">Vista satelital del Barrio San José Obrero: evolución temporal. </p>
                         </div>
                     </div>
@@ -203,7 +206,7 @@
                                 allowfullscreen>
                         </iframe>
                     </div>
-                    <p class="text-center text-sm text-gray-500 mt-4">Timelapse: Crecimiento del micro-basural de Cosquín a lo largo de los años. </p>
+                    <p class="text-center text-sm text-gray-500 mt-4">Timelapse: Crecimiento del basural a cielo abierto de Cosquín a lo largo de los años. 🗑️ (Video incrustado desde YouTube)</p>
                 </div>
             </div>
         </section>
@@ -218,8 +221,8 @@
                 </div>
                 <div class="bg-white p-8 md:p-12 rounded-xl shadow-lg border border-gray-100 fade-in-slide-up">
                     <ul class="list-disc list-inside text-base md:text-lg text-gray-700 leading-relaxed space-y-4">
-                        <li><strong class="text-[#227F6D]">Entrevistas en Profundidad:</strong> Realizadas a funcionarios de la Secretaría de Ambiente de Cosquín para entender la gestión actual y futura.</li>
-                        <li><strong class="text-[#227F6D]">Exploraciones Territoriales y Observación Directa:</strong> Visitas a barrios y zonas afectadas por residuos, complementadas con análisis de imágenes satelitales (Google Earth) para observar la evolución temporal.</li>
+                        <li><strong class="text-[#227F6D]">Entrevistas en Profundidad:</strong> Realizadas a funcionarios de la Secretaría de Ambiente de Cosquín.</li>
+                        <li><strong class="text-[#227F6D]">Exploraciones Territoriales y Observación Directa:</strong> Visitas a barrios y zonas afectadas por residuos, complementadas con análisis de imágenes satelitales.</li>
                         <li><strong class="text-[#227F6D]">Revisión Documental y Análisis de Datos:</strong> Consulta de investigaciones previas y procesamiento de datos de fuentes como REDATAM (INDEC) para volúmenes de residuos.</li>
                         <li><strong class="text-[#227F6D]">Contacto Directo con Actores Locales:</strong> Para comprender la realidad territorial y la prioridad de los RSU en la agenda gubernamental.</li>
                     </ul>
@@ -228,46 +231,12 @@
                     </p>
                     
                     <div class="flex flex-col md:flex-row justify-center items-stretch my-10 gap-8">
-                        <!-- IMAGEN 3: Infografía del diagnóstico -->
-                        <img src="assets/images/infografia.png" alt="Plano del Nodo de Reciclado Cosquín" class="w-full h-auto max-w-md rounded-lg object-contain cursor-pointer" onclick="openModal('assets/images/infografia.png')" onerror="this.onerror=null; this.src='https://placehold.co/600x350/e0dcd4/3C3C3B?text=Infografía+no+cargada'; console.error('Error al cargar infografia.png');">
-                        <p class="text-center text-sm text-gray-500 mt-4"></p>
+                        <div class="flex-1 flex flex-col items-center justify-center p-2 border border-gray-200 rounded-lg bg-gray-50 hover:shadow-md transition-shadow cursor-pointer">
+                            <!-- IMAGEN 3: Infografía del diagnóstico -->
+                            <img src="assets/images/infografia.png" alt="Infografía del diagnóstico" class="w-full h-auto max-w-lg max-h-96 object-contain cursor-pointer" onclick="openModal('assets/images/infografia.png')" onerror="this.onerror=null; this.src='https://placehold.co/600x350/e0dcd4/3C3C3B?text=Infografía+no+cargada'; console.error('Error al cargar infografia.png');">
+                            <p class="text-center text-sm text-gray-500 mt-4">Infografía del diagnóstico. </p>
+                        </div>
                     </div>
-                    <div class="flex-1 flex flex-col items-center justify-center p-2 border border-gray-200 rounded-lg bg-gray-50 hover:shadow-md transition-shadow cursor-pointer">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Nueva Sección: Mecanismos de Financiamiento -->
-        <section id="financiamiento" class="py-20 md:py-32 bg-[#EAE8E1] shadow-inner">
-            <div class="container mx-auto px-6 max-w-5xl">
-                <div class="text-center mb-16 fade-in-slide-up">
-                    <h2 class="text-3xl md:text-4xl font-bold text-[#2C5E54] mb-4">Mecanismos de Financiamiento</h2>
-                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-                        La implementación de un plan de Gestión Integral e Inclusiva de Residuos Sólidos Urbanos (GIIRSU) requiere de mecanismos de financiamiento sostenibles.
-                    </p>
-                </div>
-                <div class="bg-white p-8 md:p-12 rounded-xl shadow-lg border border-gray-100 fade-in-slide-up">
-                    <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-6">
-                        Para asegurar los recursos necesarios en la implementación de la GIIRSU, es fundamental la definición de mecanismos de financiamiento adaptados a las realidades locales. Esto implica desarrollar instrumentos que faciliten la inversión en infraestructura, equipos y capacitación, y que consoliden los sistemas de co-gestión entre los actores involucrados.
-                    </p>
-                    <ul class="list-disc list-inside text-base md:text-lg text-gray-700 leading-relaxed space-y-4">
-                        <li><strong class="text-[#227F6D]">Marco Normativo Adaptado:</strong> Es indispensable la elaboración y puesta en marcha de ordenanzas locales y convenios de co-gestión, en coordinación con organismos provinciales y municipales, para distribuir los costos operativos y de inversión de manera equitativa.</li>
-                        <li><strong class="text-[#227F6D]">Matriz de Costos GIIRSU:</strong> La utilización de herramientas como la Matriz de Costos del Ministerio de Ambiente y Desarrollo Sostenible permite calcular con precisión los gastos fijos y variables, facilitando propuestas de financiamiento que integren recursos propios, subvenciones y asistencia técnica.</li>
-                        <li><strong class="text-[#227F6D]">Establecimiento de Multas:</strong> La penalización a grandes generadores por incumplimiento de protocolos de separación y disposición de residuos busca conformar fondos para la inversión en actividades de la cooperativa o el Municipio.</li>
-                        <li><strong class="text-[#227F6D]">Alianzas Público-Privadas:</strong> La articulación de mecanismos de asistencia técnica y financiamiento a través de estas alianzas es clave para complementar recursos locales, ampliar la capacidad de inversión e incorporar experiencias y tecnologías que optimicen la gestión.</li>
-                        <li><strong class="text-[#227F6D]">Proyectos Productivos Circulares:</strong> La integración de la economía circular en la planificación financiera promueve proyectos que transforman residuos en insumos para nuevas cadenas de valor, generando empleo y aportando valor agregado.</li>
-                    </ul>
-
-                    <div class="flex justify-center my-10">
-                        <!-- IMAGEN: Esquema de Financiamiento -->
-                        <img src="assets/images/Financiamiento.png" 
-                             alt="Esquema de Financiamiento de sistemas GIIRSU" 
-                             class="w-5/6 md:w-2/3 h-auto max-w-full rounded-lg object-contain cursor-pointer shadow-lg" 
-                             onclick="openModal('assets/images/Financiamiento.png')" 
-                             onerror="this.onerror=null; this.src='https://placehold.co/700x400/e0dcd4/3C3C3B?text=Esquema+de+Financiamiento+no+cargado'; console.error('Error al cargar Financiamiento.png. Verifica nombre/extensión.');">
-                    </div>
-                    <p class="text-center text-sm text-gray-500 mt-4">Esquema conceptual de financiación de sistemas GIIRSU. </p>
                 </div>
             </div>
         </section>
@@ -298,6 +267,51 @@
                 </div>
             </div>
         </section>
+
+        <!-- Nueva Sección: Mecanismos de Financiamiento didácticos (MOVED HERE) -->
+        <section id="financiamiento" class="py-20 md:py-32 bg-[#EAE8E1] shadow-inner">
+            <div class="container mx-auto px-6 max-w-5xl">
+                <div class="text-center mb-16 fade-in-slide-up">
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#2C5E54] mb-4">Mecanismos de Financiamiento</h2>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                        Para asegurar los recursos necesarios en la implementación del GIIRSU, proponemos estos mecanismos clave:
+                    </p>
+                </div>
+                <div class="bg-white p-8 md:p-12 rounded-xl shadow-lg border border-gray-100 fade-in-slide-up">
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-10">
+                        <div class="animated-card bg-white p-6 rounded-xl shadow-md border border-gray-100 flex flex-col items-center justify-center space-y-4 text-center">
+                            <div class="text-5xl mb-2">📜</div>
+                            <h3 class="font-bold text-xl text-[#2C5E54]">Marco Normativo Adaptado</h3>
+                            <p class="text-base text-gray-700 leading-relaxed">Elaboración de ordenanzas y convenios para distribuir costos operativos y de inversión.</p>
+                        </div>
+                        <div class="animated-card bg-white p-6 rounded-xl shadow-md border border-gray-100 flex flex-col items-center justify-center space-y-4 text-center">
+                            <div class="text-5xl mb-2">📊</div>
+                            <h3 class="font-bold text-xl text-[#2C5E54]">Matriz de Costos GIIRSU</h3>
+                            <p class="text-base text-gray-700 leading-relaxed">Herramienta del Ministerio de Ambiente para calcular gastos y facilitar propuestas de financiamiento.</p>
+                        </div>
+                        <div class="animated-card bg-white p-6 rounded-xl shadow-md border border-gray-100 flex flex-col items-center justify-center space-y-4 text-center">
+                            <div class="text-5xl mb-2">💸</div>
+                            <h3 class="font-bold text-xl text-[#2C5E54]">Establecimiento de Multas</h3>
+                            <p class="text-base text-gray-700 leading-relaxed">Penalización a grandes generadores por incumplimiento para conformar fondos de inversión.</p>
+                        </div>
+                        <div class="animated-card bg-white p-6 rounded-xl shadow-md border border-gray-100 flex flex-col items-center justify-center space-y-4 text-center">
+                            <div class="text-5xl mb-2">🤝</div>
+                            <h3 class="font-bold text-xl text-[#2C5E54]">Alianzas Público-Privadas</h3>
+                            <p class="text-base text-gray-700 leading-relaxed">Articulación clave para complementar recursos, ampliar inversión y optimizar la gestión.</p>
+                        </div>
+                        <div class="animated-card bg-white p-6 rounded-xl shadow-md border border-gray-100 flex flex-col items-center justify-center space-y-4 text-center">
+                            <div class="text-5xl mb-2">♻️</div>
+                            <h3 class="font-bold text-xl text-[#2C5E54]">Proyectos Productivos Circulares</h3>
+                            <p class="text-base text-gray-700 leading-relaxed">Integración de la economía circular: transformar residuos en insumos, generando empleo y valor.</p>
+                        </div>
+                    </div>
+
+                    <!-- Removed the image of Financiamiento.png -->
+                </div>
+            </div>
+        </section>
+
 
         <!-- Sección de Proyección a Futuro (Dimensiones Clave) - Carousel Re-implementado -->
         <section id="dimensiones" class="py-20 md:py-32 bg-[#EAE8E1] shadow-inner">
@@ -368,6 +382,7 @@
     <script>
         // Modal Functions
         function openModal(src) {
+            console.log('Intentando abrir modal con src:', src); // Log the source being used
             document.getElementById('modalImage').src = src;
             document.getElementById('imageModal').classList.remove('hidden');
         }
