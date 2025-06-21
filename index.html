@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es" class="scroll-smooth">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,6 +29,34 @@
             width: 8px;
             /* Hide scrollbar for carousels */
             display: none; /* For Webkit browsers (Chrome, Safari, Edge) */
+        }
+        
+        /* Nuevos estilos para móviles */
+        @media (max-width: 767px) {
+            .animated-card {
+                min-width: 85% !important;
+                margin: 0 7.5%;
+                padding: 1.5rem; /* Reducir padding en móviles */
+            }
+            
+            .scroll-container {
+                scroll-padding: 0 20%;
+                -webkit-overflow-scrolling: touch;
+            }
+            
+            #propuesta-pagination div, 
+            #dimension-pagination div {
+                width: 12px;
+                height: 12px;
+            }
+            
+            /* Opcional: Mostrar botones de navegación en móviles */
+            #prevPropuestaBtn, #nextPropuestaBtn,
+            #prevDimensionBtn, #nextDimensionBtn {
+                display: block !important;
+                transform: translateY(-50%) scale(0.8);
+                background-color: rgba(34, 127, 109, 0.8);
+            }
         }
         ::-webkit-scrollbar-track {
             background: #e0dcd4; /* Lighter beige */
@@ -126,7 +153,7 @@
                 <a href="#contexto-problema" class="nav-link text-gray-700 hover:text-[#227F6D]">Contexto y Problema</a>
                 <a href="#metodologia" class="nav-link text-gray-700 hover:text-[#227F6D]">Metodología</a>
                 <a href="#propuestas" class="nav-link text-gray-700 hover:text-[#227F6D]">Propuestas</a>
-                <a href="#financiamiento" class="nav-link text-gray-700 hover:text-[#227F6D]">Financiamiento</a> <!-- Moved here -->
+                <a href="#financiamiento" class="nav-link text-gray-700 hover:text-[#227F6D]">Financiamiento</a> 
                 <a href="#dimensiones" class="nav-link text-gray-700 hover:text-[#227F6D]">Dimensiones</a>
                 <a href="#conclusion" class="nav-link text-gray-700 hover:text-[#227F6D]">Conclusión</a>
             </div>
