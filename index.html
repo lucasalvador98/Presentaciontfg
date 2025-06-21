@@ -140,6 +140,28 @@
         #imageModal img {
             cursor: zoom-out; /* Indicate it's clickable to close */
         }
+
+        /* General card styling (applied to cards in grid sections and can be used for others) */
+        .general-card-style {
+            background-color: #ffffff;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            padding: 2rem; /* Matches p-8 from existing cards */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            border: 2px solid #E0DCD4;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out; /* Smooth hover effects */
+            cursor: pointer;
+        }
+
+        /* Hover effect for clickable cards */
+        .general-card-style:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            border-color: #227F6D; /* Highlight on hover */
+        }
     </style>
 </head>
 
@@ -167,7 +189,7 @@
                     Gestión Integral de Residuos Sólidos Urbanos en Cosquin
                 </h1>
                 <p class="mt-4 text-lg md:text-2xl text-gray-700 max-w-4xl mx-auto font-light">
-                    Un enfoque desde la <span class="font-semibold text-[#227F6D]">Economía Circular</span>
+                    Un enfoque territorial desde la <span class="font-semibold text-[#227F6D]">Economía Circular</span>
                 </p>
             </div>
         </section>
@@ -177,20 +199,20 @@
                 <div class="text-center mb-16 fade-in-slide-up">
                     <h2 class="text-3xl md:text-4xl font-bold text-[#2C5E54] mb-4"></h2>
                     <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-                        Este proyecto busca realizar un aporte para el abordaje de las problemáticas ambientales a partir del diseño de un plan de gestión integral de RSU y proponiendo la generación de empleo verde en Cosquín.
+                        Este proyecto se propone contribuir a la transformación del modelo de gestión de residuos sólidos urbanos (RSU) en Cosquín, integrando el enfoque de economía circular con estrategias inclusivas y participativas. Se trata de una propuesta orientada a resolver problemáticas ambientales locales mediante la generación de empleo verde, el fortalecimiento institucional y la articulación entre actores comunitarios y gubernamentales.
                     </p>
                 </div>
                 <div class="bg-white p-8 md:p-12 rounded-xl shadow-lg border border-gray-100 fade-in-slide-up">
                     <h3 class="font-bold text-xl text-[#2C5E54] mb-4">Objetivo General:</h3>
                     <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-6">
-                        Contribuir en el diseño de un plan de gestión integral e inclusivo de RSU desde la perspectiva de la economía circular en la localidad de Cosquín, Córdoba, durante el período comprendido entre 2024/2025.
+                        Contribuir con el diseño de un plan integral, inclusivo y territorialmente situado para la gestión de RSU en Cosquín (Córdoba), incorporando principios de economía circular y fortaleciendo la articulación entre el Estado y la Economía Social y Solidaria durante el período 2024–2025.
                     </p>
                     <h3 class="font-bold text-xl text-[#2C5E54] mb-4">Objetivos Específicos:</h3>
                     <ul class="list-disc list-inside text-base md:text-lg text-gray-700 leading-relaxed space-y-2">
-                        <li>Relevar capacidades institucionales, actores y normativa.</li>
-                        <li>Incluir entidades de la ESS en la gestión de RSU.</li>
-                        <li>Proponer un modelo de ordenanza para regular la gestión integral de RSU.</li>
-                        <li>Generar un conjunto de programas para organizar y planificar la GIIRSU.</li>
+                        <li>Relevar capacidades institucionales, actores involucrados y normativa vigente.</li>
+                        <li>Incluir entidades de la ESS (Economía Social y Solidaria) en la gestión de los residuos sólidos urbanos.</li>
+                        <li>Proponer un modelo de ordenanza que regule la Gestión Integral e Inclusiva de Residuos Sólidos Urbanos (GIIRSU) a nivel local.</li>
+                        <li>Diseñar programas específicos para organizar y planificar la GIIRSU.</li>
                     </ul>
                 </div>
             </div>
@@ -206,7 +228,7 @@
                 </div>
                 <div class="bg-white p-8 md:p-12 rounded-xl shadow-lg border border-gray-100 fade-in-slide-up">
                     <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-6">
-                        Cosquín, ubicada a 45 km al noroeste de la capital cordobesa y cabecera del departamento de Punilla, enfrenta una gestión de residuos obsoleta y sin planificación, agravada por el crecimiento demográfico (27% entre 2010-2022). Se observan basurales y la ausencia de un sitio de disposición final adecuado, generando contaminación y riesgos sanitarios. La economía local, dependiente del turismo, necesita estrategias resilientes y la promoción de empleos verdes.
+                        Cosquín, cabecera del Departamento de Punilla y a 45 km de la ciudad de Córdoba, enfrenta una problemática creciente en relación con sus residuos: el modelo vigente de disposición es obsoleto, carece de una planificación eficiente y se ve agravado por un sostenido crecimiento demográfico (27% entre 2010 y 2022). Se identifican microbasurales informales y falta de infraestructura adecuada para la disposición final. A su vez, la economía local —fuertemente influida por el turismo— demanda estrategias resilientes que promuevan el empleo verde y una mejor calidad ambiental para residentes y visitantes.
                     </p>
                     
                     <div class="flex flex-col md:flex-row justify-center items-stretch my-10 gap-8">
@@ -249,7 +271,7 @@
                     <ul class="list-disc list-inside text-base md:text-lg text-gray-700 leading-relaxed space-y-4">
                         <li><strong class="text-[#227F6D]">Entrevistas en Profundidad:</strong> Realizadas a funcionarios de la Secretaría de Ambiente de Cosquín.</li>
                         <li><strong class="text-[#227F6D]">Exploraciones Territoriales y Observación Directa:</strong> Visitas a barrios y zonas afectadas por residuos, complementadas con análisis de imágenes satelitales.</li>
-                        <li><strong class="text-[#227F6D]">Revisión Documental y Análisis de Datos:</strong> Consulta de investigaciones previas y procesamiento de datos de fuentes como REDATAM (INDEC) para volúmenes de residuos.</li>
+                        <li><strong class="text-[#227F6D]">Revisión Documental y Análisis de Datos:</strong> Consulta de investigaciones previas y procesamiento de datos de fuentes como REDATAM (INDEC).</li>
                         <li><strong class="text-[#227F6D]">Contacto Directo con Actores Locales:</strong> Para comprender la realidad territorial y la prioridad de los RSU en la agenda gubernamental.</li>
                     </ul>
                     <p class="text-base md:text-lg text-gray-700 leading-relaxed mt-6">
@@ -267,34 +289,23 @@
             </div>
         </section>
 
-        <!-- Sección de Propuestas Estratégicas - Carousel Re-implementado -->
+        <!-- Sección de Propuestas Estratégicas - Diseño de Cuadrícula -->
         <section id="propuestas" class="py-20 md:py-32 bg-white shadow-inner">
             <div class="container mx-auto px-6 max-w-6xl fade-in-slide-up">
                 <div class="text-center mb-16">
                     <h2 class="text-3xl md:text-4xl font-bold text-[#2C5E54] mb-4">Propuestas Estratégicas: 5 Programas Clave</h2>
                     <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-                        Nuestra propuesta se materializa a través de 5 programas que abordan las deficiencias del sistema actual y promueven la sostenibilidad.
+                        Nuestra propuesta se materializa a través de 5 programas que abordan las deficiencias del sistema actual y promueven la sostenibilidad. Haz clic en cada propuesta para saber más.
                     </p>
                 </div>
 
-                <div class="relative">
-                    <div id="propuestas-container" class="flex overflow-x-scroll scroll-container snap-x snap-mandatory rounded-xl shadow-lg bg-white border border-gray-100 p-4 md:p-8">
-                        <!-- Propuesta Cards will be injected here by JavaScript -->
-                    </div>
-                    <button id="prevPropuestaBtn" class="absolute left-0 top-1/2 -translate-y-1/2 bg-[#227F6D] text-white p-3 rounded-full shadow-lg hover:bg-[#1a6355] transition-all hidden md:block">
-                        &#10094;
-                    </button>
-                    <button id="nextPropuestaBtn" class="absolute right-0 top-1/2 -translate-y-1/2 bg-[#227F6D] text-white p-3 rounded-full shadow-lg hover:bg-[#1a6355] transition-all hidden md:block">
-                        &#10095;
-                    </button>
-                    <div id="propuesta-pagination" class="flex justify-center mt-8 space-x-2">
-                        <!-- Pagination dots will be injected here by JavaScript -->
-                    </div>
+                <div id="propuestas-grid-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 rounded-xl shadow-lg bg-white border border-gray-100 p-4 md:p-8">
+                    <!-- Las tarjetas de las propuestas serán insertadas aquí dinámicamente por JavaScript -->
                 </div>
             </div>
         </section>
 
-        <!-- Nueva Sección: Mecanismos de Financiamiento didácticos (MOVED HERE) -->
+                        <!-- Nueva Sección: Mecanismos de Financiamiento didácticos -->
         <section id="financiamiento" class="py-20 md:py-32 bg-[#EAE8E1] shadow-inner">
             <div class="container mx-auto px-6 max-w-5xl">
                 <div class="text-center mb-16 fade-in-slide-up">
@@ -304,40 +315,26 @@
                     </p>
                 </div>
                 <div class="bg-white p-8 md:p-12 rounded-xl shadow-lg border border-gray-100 fade-in-slide-up">
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-10">
-                        <div class="animated-card bg-white p-6 rounded-xl shadow-md border border-gray-100 flex flex-col items-center justify-center space-y-4 text-center">
-                            <div class="text-5xl mb-2">📜</div>
-                            <h3 class="font-bold text-xl text-[#2C5E54]">Marco Normativo Adaptado</h3>
-                            <p class="text-base text-gray-700 leading-relaxed">Elaboración de ordenanzas y convenios para distribuir costos operativos y de inversión.</p>
-                        </div>
-                        <div class="animated-card bg-white p-6 rounded-xl shadow-md border border-gray-100 flex flex-col items-center justify-center space-y-4 text-center">
-                            <div class="text-5xl mb-2">📊</div>
-                            <h3 class="font-bold text-xl text-[#2C5E54]">Matriz de Costos GIIRSU</h3>
-                            <p class="text-base text-gray-700 leading-relaxed">Herramienta del Ministerio de Ambiente para calcular gastos y facilitar propuestas de financiamiento.</p>
-                        </div>
-                        <div class="animated-card bg-white p-6 rounded-xl shadow-md border border-gray-100 flex flex-col items-center justify-center space-y-4 text-center">
-                            <div class="text-5xl mb-2">💸</div>
-                            <h3 class="font-bold text-xl text-[#2C5E54]">Establecimiento de Multas</h3>
-                            <p class="text-base text-gray-700 leading-relaxed">Penalización a grandes generadores por incumplimiento para conformar fondos de inversión.</p>
-                        </div>
-                        <div class="animated-card bg-white p-6 rounded-xl shadow-md border border-gray-100 flex flex-col items-center justify-center space-y-4 text-center">
-                            <div class="text-5xl mb-2">🤝</div>
-                            <h3 class="font-bold text-xl text-[#2C5E54]">Alianzas Público-Privadas</h3>
-                            <p class="text-base text-gray-700 leading-relaxed">Articulación clave para complementar recursos, ampliar inversión y optimizar la gestión.</p>
-                        </div>
-                        <div class="animated-card bg-white p-6 rounded-xl shadow-md border border-gray-100 flex flex-col items-center justify-center space-y-4 text-center">
-                            <div class="text-5xl mb-2">♻️</div>
-                            <h3 class="font-bold text-xl text-[#2C5E54]">Proyectos Productivos Circulares</h3>
-                            <p class="text-base text-gray-700 leading-relaxed">Integración de la economía circular: transformar residuos en insumos, generando empleo y valor.</p>
-                        </div>
-                    </div>
-
-                    <!-- Removed the image of Financiamiento.png -->
+                    <ul class="list-disc list-inside text-base md:text-lg text-gray-700 leading-relaxed space-y-4 max-w-2xl mx-auto">
+                        <li class="fade-in-slide-up">
+                            <strong class="text-[#227F6D]">Marco Normativo Adaptado:</strong> Elaboración de ordenanzas y convenios para distribuir costos operativos y de inversión.
+                        </li>
+                        <li class="fade-in-slide-up">
+                            <strong class="text-[#227F6D]">Matriz de Costos GIIRSU:</strong> Herramienta del Ministerio de Ambiente para calcular gastos y facilitar propuestas de financiamiento.
+                        </li>
+                        <li class="fade-in-slide-up">
+                            <strong class="text-[#227F6D]">Establecimiento de Multas:</strong> Penalización a grandes generadores por incumplimiento para conformar fondos de inversión.
+                        </li>
+                        <li class="fade-in-slide-up">
+                            <strong class="text-[#227F6D]">Alianzas Público-Privadas:</strong> Articulación clave para complementar recursos, ampliar inversión y optimizar la gestión.
+                        </li>
+                        <li class="fade-in-slide-up">
+                            <strong class="text-[#227F6D]">Proyectos Productivos Circulares:</strong> Integración de la economía circular: transformar residuos en insumos, generando empleo y valor.
+                        </li>
+                    </ul>
                 </div>
             </div>
         </section>
-
 
         <!-- Sección de Proyección a Futuro (Dimensiones Clave) - Carousel Re-implementado -->
         <section id="dimensiones" class="py-20 md:py-32 bg-[#EAE8E1] shadow-inner">
@@ -382,6 +379,14 @@
                         Este proyecto transforma Cosquín. Invitamos a todos a sumarse a esta visión colectiva por una gestión ambiental inclusiva y un futuro próspero. 🚀
                     </p>
                 </div>
+                
+                <!-- Botón para ver anexos -->
+                <div class="text-center mt-12 fade-in-slide-up">
+                    <a href="anexos.html" class="inline-block bg-[#227F6D] text-white font-bold py-4 px-8 rounded-lg shadow-lg hover:bg-[#1a6355] transition-colors text-lg">
+                        Ver Anexos y Documentación Adicional
+                    </a>
+                </div>
+
             </div>
         </section>
     </main>
@@ -481,12 +486,37 @@
 
 
             const propuestasContent = [
-                { icon: '♻️', title: '1. Nodo Local de Reciclado', desc: 'Centro de acopio, clasificación y valorización; corazón de la gestión integral.' },
-                { icon: '🌱', title: '2. Separación en Origen', desc: 'Fomenta el cambio cultural y la recolección diferenciada en la comunidad.' },
-                { icon: '🎉', title: '3. Cosquín, Festival Sostenible', desc: 'Reduce el impacto ambiental en grandes eventos y la temporada turística.' },
-                { icon: '🏢', title: '4. Registro Grandes Generadores', desc: 'Regula y optimiza la gestión de residuos de comercios y empresas.' },
-                { icon: '🤝', title: '5. Registro Recuperadores', desc: 'Formaliza y organiza a los trabajadores de la economía circular.' }
-            ];
+            { 
+                icon: '♻️', 
+                title: '1. Programa Madre: Nodo Local de Reciclado y Centro de Recuperación Textil', 
+                desc: 'Corazón de la gestión integral: acopio, clasificación y valorización de residuos secos, incluyendo textiles.',
+                link: 'programa_madre.html'
+            },
+            { 
+                icon: '🌱', 
+                title: '2. Programa Satélite: Separación en Origen y Recolección Diferenciada', 
+                desc: 'Fomenta el cambio cultural y optimiza la recolección de residuos domiciliarios.',
+                link: 'programa_satelite_2.html'
+            },
+            { 
+                icon: '🎉', 
+                title: '3. Programa Satélite: "Cosquín, Festival Sostenible"', 
+                desc: 'Reduce el impacto ambiental en grandes eventos y la temporada turística.',
+                link: 'programa_satelite_3.html'
+            },
+            { 
+                icon: '🏢', 
+                title: '4. Programa Satélite: Registro de Grandes Generadores y Generadores Especiales', 
+                desc: 'Regula y optimiza la gestión de residuos de comercios y empresas.',
+                link: 'programa_satelite_4.html'
+            },
+            { 
+                icon: '🤝', 
+                title: '5. Programa Satélite: Registro de Recuperadores y Trabajadores de la Economía Circular', 
+                desc: 'Formaliza y organiza a los trabajadores de la economía circular.',
+                link: 'programa_satelite_5.html'
+            }
+        ];
 
             const dimensionesContent = [
                 { icon: '🌍', title: 'Sostenibilidad Ambiental', desc: 'Menos contaminación, más recursos y mitigación del impacto del basural. 🌳' },
@@ -496,13 +526,58 @@
                 { icon: '🏛️', title: 'Transformación Institucional', desc: 'Gobernanza participativa, marco legal sólido y capacidad de gestión. 📋' }
             ];
 
-            // Function to setup animated sections (carousels)
-            function setupAnimatedCarousel(containerId, prevBtnId, nextBtnId, paginationId, contentArray, autoplayInterval = 5000) {
+            // Nueva función para renderizar las propuestas en una cuadrícula
+            function renderPropuestasGrid() {
+                const container = document.getElementById('propuestas-grid-container');
+                container.innerHTML = ''; // Limpiar cualquier contenido existente
+
+                propuestasContent.forEach((item) => {
+                    const card = document.createElement('div');
+                    card.className = 'bg-white p-6 rounded-xl shadow-md border border-gray-100 flex flex-col items-center justify-center space-y-4 text-center cursor-pointer hover:shadow-lg transition-all';
+                    card.onclick = () => window.location.href = item.link;
+
+                    card.innerHTML = `
+                        <div class="text-5xl mb-2">${item.icon}</div>
+                        <h3 class="font-bold text-xl text-[#2C5E54]">${item.title}</h3>
+                        <p class="text-base text-gray-700 leading-relaxed">${item.desc}</p>
+                    `;
+                    container.appendChild(card);
+                });
+            }
+
+            // Nueva función para renderizar las dimensiones en una cuadrícula (si se decide usar una cuadrícula en lugar de carrusel)
+            function renderDimensionesGrid() {
+                const container = document.getElementById('dimensiones-grid-container'); // Asegúrate de que este ID exista en tu HTML si lo usas
+                if (!container) return; // Salir si el contenedor no existe
+                container.innerHTML = ''; // Limpiar cualquier contenido existente
+
+                dimensionesContent.forEach((item) => {
+                    const card = document.createElement('div');
+                    card.className = `general-card-style fade-in-slide-up`; // Aplica la clase general para estilos y animación
+
+                    card.innerHTML = `
+                        <div class="text-5xl mb-2">${item.icon}</div>
+                        <h3 class="font-bold text-xl text-[#2C5E54]">${item.title}</h3>
+                        <p class="text-base text-gray-700 leading-relaxed">${item.desc}</p>
+                    `;
+                    container.appendChild(card);
+                });
+            }
+
+            // Función para configurar carruseles animados (reutilizable)
+            function setupAnimatedCarousel(containerId, prevBtnId, nextBtnId, paginationId, contentArray) {
                 const container = document.getElementById(containerId);
                 const prevBtn = document.getElementById(prevBtnId);
                 const nextBtn = document.getElementById(nextBtnId);
                 const paginationContainer = document.getElementById(paginationId);
+
+                if (!container || !prevBtn || !nextBtn || !paginationContainer) {
+                    console.error(`Carousel elements not found for container: ${containerId}`);
+                    return;
+                }
+
                 let currentIndex = 0;
+                const autoplayInterval = 3000; // 3 seconds
                 let autoScrollInterval;
 
                 function renderCards() {
@@ -510,8 +585,13 @@
                     paginationContainer.innerHTML = '';
                     contentArray.forEach((item, index) => {
                         const card = document.createElement('div');
-                        // Use animated-card class for carousel specific styling
-                        card.className = `animated-card bg-white p-8 rounded-xl shadow-md border border-gray-100 flex flex-col items-center text-center justify-center space-y-4 flex-shrink-0`;
+                        card.className = `animated-card bg-white p-8 rounded-xl shadow-md border border-gray-100 flex flex-col items-center justify-center space-y-4 flex-shrink-0 text-center`;
+
+                        // Add click event listener to redirect to the new page only for 'propuestas' carousel
+                        if (containerId === 'propuestas-container' && item.link) {
+                            card.onclick = () => window.location.href = item.link;
+                        }
+
                         card.innerHTML = `
                             <div class="text-5xl mb-2">${item.icon}</div>
                             <h3 class="font-bold text-xl text-[#2C5E54]">${item.title}</h3>
@@ -539,10 +619,10 @@
                         const containerWidth = container.offsetWidth;
                         const cardOffsetLeft = cardElement.offsetLeft;
                         const cardWidth = cardElement.offsetWidth;
-                        
+
                         // Calculate target scrollLeft to center the card
                         const targetScrollLeft = cardOffsetLeft - (containerWidth / 2) + (cardWidth / 2);
-                        
+
                         container.scrollTo({
                             left: targetScrollLeft,
                             behavior: 'smooth'
@@ -600,34 +680,14 @@
                     startAutoplay(); // Restart autoplay
                 });
 
-                // Detect manual scroll to reset autoplay
-                container.addEventListener('scroll', () => {
-                    let closestIndex = currentIndex;
-                    let minDistance = Infinity;
-                    Array.from(container.children).forEach((card, index) => {
-                        const cardCenter = card.offsetLeft + card.offsetWidth / 2;
-                        const containerCenter = container.scrollLeft + container.offsetWidth / 2;
-                        const distance = Math.abs(cardCenter - containerCenter);
-                        if (distance < minDistance) {
-                            minDistance = distance;
-                            closestIndex = index;
-                        }
-                    });
-
-                    if (closestIndex !== currentIndex) {
-                        clearInterval(autoScrollInterval); // Stop autoplay on manual scroll
-                        currentIndex = closestIndex;
-                        updateActiveCard();
-                        startAutoplay(); // Restart autoplay
-                    }
-                });
-
+                // Initial render and start autoplay
                 renderCards();
-                startAutoplay(); // Start autoplay initially
+                startAutoplay();
             }
 
-            setupAnimatedCarousel('propuestas-container', 'prevPropuestaBtn', 'nextPropuestaBtn', 'propuesta-pagination', propuestasContent);
-            setupAnimatedCarousel('dimensiones-container', 'prevDimensionBtn', 'nextDimensionBtn', 'dimension-pagination', dimensionesContent);
+            // Initialize both components
+            renderPropuestasGrid(); // Renderiza las propuestas en cuadrícula
+            setupAnimatedCarousel('dimensiones-container', 'prevDimensionBtn', 'nextDimensionBtn', 'dimension-pagination', dimensionesContent); // Mantén el carrusel para dimensiones
         });
     </script>
 </body>
